@@ -4,6 +4,8 @@ public class userController {
     int j;
     short j2;
     int aa;
+
+    String a;
 }
 
 
