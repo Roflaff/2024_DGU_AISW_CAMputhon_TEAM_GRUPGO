@@ -2,5 +2,8 @@ package aisw.campthon.back.controller;
 
 public class userController {
     int j;
-    String a;
+    short j2;
+    int aa;
 }
+
+
