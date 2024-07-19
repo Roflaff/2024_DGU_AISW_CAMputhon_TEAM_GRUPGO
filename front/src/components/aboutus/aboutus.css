@@ -1,0 +1,21 @@
+#about-us-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #CCCEFF;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  #about-us-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  #about-us-page p {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  

@@ -1,0 +1,14 @@
+.app {
+  font-family: Arial, sans-serif;
+}
+
+.app.shift .topbar,
+.app.shift .content {
+  transform: translateX(250px); /* 사이드 바가 열릴 때의 위치에 맞춰 이동 */
+}
+
+.content {
+  display: flex;
+  padding-top: 60px; /* 탑 바의 높이에 맞춰 패딩을 추가 */
+  transition: transform 0.3s ease; /* 애니메이션 효과 */
+}

@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap");
+
+.sidebar {
+    font-family: Poppins;
+    position: fixed;
+    top: 0px;
+    left: -250px; /* 시작 위치를 화면 밖으로 설정 */
+    width: 250px;
+    height: calc(100%);
+    background-color: #F5E59D;
+    transition: left 0.3s ease; /* 애니메이션 효과 */
+    overflow: hidden; /* 가상 요소가 넘치지 않도록 설정 */
+    z-index: 2;
+  }
+  
+  .side-top {
+    padding: 15px;
+    background-color: #293963;
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 50px;
+  }
+  
+  .sidebar.open {
+    left: 0; /* 사이드바가 열릴 때의 위치 */
+  }
+  
+  .close-button {
+    color: white;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 15px;
+  }
+  
+  .sidebar ul li {
+    margin: 10px 0;
+  }
+  

@@ -1,0 +1,12 @@
+[
+  {
+    "userID": "front-end",
+    "firstName": "Ryu",
+    "lastName": "KyungRok",
+    "gender": "male",
+    "phone": "010",
+    "email": "test@test.com",
+    "pass": "123456",
+    "avatar": ""
+  }
+]

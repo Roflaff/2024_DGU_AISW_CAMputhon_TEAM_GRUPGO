@@ -1,0 +1,43 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
+
+.main-page {
+  background-color: #000351;
+  width:200%;
+  height:100%;
+  font-family: 'Noto Sans';
+  font-size: 2rem;
+  z-index: 1;
+}
+
+.main-page h1 {
+  color: #ffffff;
+}
+
+.main-page p {
+  color: #ffffff;
+}
+
+.title {
+  width:100vh;
+  height:100vh;
+  padding: 100px;
+  position: center;
+}
+
+.toggle-container {
+  padding: 20px;
+  display: flex;
+  justify-content: left;
+  gap: 10px; /* 버튼 사이 간격 조정 */
+}
+
+.image {
+  background-color: rgb(255, 198, 198);
+  width: 80%;
+  height: 10%;
+  padding: 100px;
+  border-radius: 20px;
+  position: relative;
+  z-index: 2;
+}
