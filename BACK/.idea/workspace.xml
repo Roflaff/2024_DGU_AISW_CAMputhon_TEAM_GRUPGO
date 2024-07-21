@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62fb54ec-fc80-4c6f-8f68-3ad87f48b226" name="Changes" comment="ksp" />
+    <list default="true" id="62fb54ec-fc80-4c6f-8f68-3ad87f48b226" name="Changes" comment="ksp">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rofla/back/back/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rofla/back/back/service/UserService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -149,7 +153,7 @@
       <option name="presentableId" value="Default" />
       <updated>1721568224847</updated>
       <workItem from="1721568226102" duration="13847000" />
-      <workItem from="1721588269573" duration="1203000" />
+      <workItem from="1721588269573" duration="1599000" />
     </task>
     <task id="LOCAL-00001" summary="ksp">
       <option name="closed" value="true" />
@@ -295,7 +299,31 @@
       <option name="project" value="LOCAL" />
       <updated>1721590472639</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="ksp">
+      <option name="closed" value="true" />
+      <created>1721590636685</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1721590636685</updated>
+    </task>
+    <task id="LOCAL-00020" summary="ksp">
+      <option name="closed" value="true" />
+      <created>1721590887972</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1721590887972</updated>
+    </task>
+    <task id="LOCAL-00021" summary="ksp">
+      <option name="closed" value="true" />
+      <created>1721590975485</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1721590975485</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
