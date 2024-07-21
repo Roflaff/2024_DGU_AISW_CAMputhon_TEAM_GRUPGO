@@ -17,8 +17,8 @@ public class SubjectInfo {
     @Column(name = "name", nullable = false, length = 30)
     private String name;
 
-    @Column(name = "subject_nun", nullable = false, length = 30)
-    private String subjectNun;
+    @Column(name = "subject_num", nullable = false, length = 30)
+    private String subjectNum;
 
     @Column(name = "start_time")
     private Float startTime;
