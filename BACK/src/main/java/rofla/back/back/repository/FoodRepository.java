@@ -2,9 +2,8 @@ package rofla.back.back.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import rofla.back.back.model.SubjectInfo;
+import rofla.back.back.model.Food;
 
 @Repository
-public interface SubjectInfoRepository extends JpaRepository<SubjectInfo, Long> {
-
+public interface FoodRepository extends JpaRepository<Food, Integer> {
 }

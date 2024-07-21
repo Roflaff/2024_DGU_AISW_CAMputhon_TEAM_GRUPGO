@@ -31,4 +31,7 @@ public class SubjectInfo {
     @Column(name = "classroom", length = 30)
     private String classroom;
 
+    @Column(name = "professor", nullable = false, length = 30)
+    private String professor;
+
 }

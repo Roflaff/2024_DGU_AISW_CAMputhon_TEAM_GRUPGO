@@ -2,9 +2,8 @@ package rofla.back.back.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import rofla.back.back.model.SubjectInfo;
+import rofla.back.back.model.Diary;
 
 @Repository
-public interface SubjectInfoRepository extends JpaRepository<SubjectInfo, Long> {
-
+public interface DiaryRepository extends JpaRepository<Diary, Integer> {
 }

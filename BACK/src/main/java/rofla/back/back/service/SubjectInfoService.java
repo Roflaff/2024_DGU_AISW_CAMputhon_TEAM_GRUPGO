@@ -9,4 +9,5 @@ import rofla.back.back.repository.SubjectInfoRepository;
 public class SubjectInfoService {
     private final SubjectInfoRepository subjectInfoRepository;
 
+
 }
