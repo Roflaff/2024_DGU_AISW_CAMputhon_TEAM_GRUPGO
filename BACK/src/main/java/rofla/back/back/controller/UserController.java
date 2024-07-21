@@ -3,8 +3,12 @@ package rofla.back.back.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import rofla.back.back.model.Food;
 import rofla.back.back.model.User;
 import rofla.back.back.service.UserService;
+
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
@@ -24,4 +28,36 @@ public class UserController {
         }
     }
 
+    @GetMapping("/getAll")
+    public ResponseEntity<List<User>> getAllUser() {
+        List<User> total = userService.getAllUser();
+        return ResponseEntity.ok(total);
+    }
+
+    // 데이터 조회
+    @GetMapping("/search/{name}")
+    public ResponseEntity<User> searchUser(@PathVariable String name){
+        Optional<User> content = userService.searchUserByUsername(name);
+        return content.map(ResponseEntity::ok)
+                .orElseGet(()->ResponseEntity.notFound().build());
+    }
+
+
+    @PutMapping("/update")
+    public ResponseEntity<User> updateUser(@RequestBody User newUser) {
+        Optional<User> content = userService.modifyUser(newUser);
+        return content.map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    //b의 값 찾아서, 해당 행을 삭제,
+    @DeleteMapping("/delete/{name}")
+    public ResponseEntity<String> deleteTest(@PathVariable String name) {
+        try {
+            userService.deleteUser(name);
+            return ResponseEntity.ok("delete!!");
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(409).body(e.getMessage());
+        }
+    }
 }

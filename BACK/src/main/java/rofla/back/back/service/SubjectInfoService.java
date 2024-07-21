@@ -2,10 +2,12 @@ package rofla.back.back.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import rofla.back.back.model.Subject;
 import rofla.back.back.model.SubjectInfo;
 import rofla.back.back.model.User;
 import rofla.back.back.repository.SubjectInfoRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -23,6 +25,11 @@ public class SubjectInfoService {
     //조회
     public Optional<SubjectInfo> searchSubjectInfoBySubjectNum(String SubjectNum) {
         return subjectInfoRepository.findBySubjectNum(SubjectNum);
+    }
+
+    //모두 조회
+    public List<SubjectInfo> getAllSubjectInfo() {
+        return subjectInfoRepository.findAll();
     }
 
     //수정

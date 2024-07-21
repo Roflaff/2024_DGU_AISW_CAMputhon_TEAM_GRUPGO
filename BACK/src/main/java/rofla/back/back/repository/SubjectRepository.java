@@ -6,10 +6,12 @@ import rofla.back.back.model.Subject;
 import rofla.back.back.model.SubjectInfo;
 import rofla.back.back.model.User;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
 public interface SubjectRepository extends JpaRepository<Subject,Integer> {
-    Optional<Subject> findBySubjectNumAndUsername(SubjectInfo subjectNum, User username);
+    Optional<Subject> findBySubjectNumAndUsername(SubjectInfo subjectNum, User user);
+    List<Subject> findAllByUsername(User user);
 
 }

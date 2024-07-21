@@ -3,9 +3,11 @@ package rofla.back.back.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import rofla.back.back.model.Behavior;
+import rofla.back.back.model.Food;
 import rofla.back.back.model.Order;
 import rofla.back.back.repository.BehaviorRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -26,6 +28,12 @@ public class BehaviorService {
         public Optional<Behavior> searchBehaviorByUsername(String username) {
             return behaviorRepository.findByUsername(username);
         }
+
+        //모두 조회
+        public List<Behavior> getAllBehavior() {
+            return behaviorRepository.findAll();
+        }
+
 
         //수정
         public Optional<Behavior> modifyBehavior(Behavior newbehavior) {

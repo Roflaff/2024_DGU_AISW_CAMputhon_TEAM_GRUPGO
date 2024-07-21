@@ -3,8 +3,10 @@ package rofla.back.back.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import rofla.back.back.model.Order;
+import rofla.back.back.model.Subject;
 import rofla.back.back.repository.OrderRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -23,6 +25,11 @@ public class OrderService {
     //조회
     public Optional<Order> searchOrderByUsernameAndDate(Order order) {
         return orderRepository.findByUsernameAndDate(order.getUsername(), order.getDate());
+    }
+
+    //모두 조회
+    public List<Order> getAllOrder() {
+        return orderRepository.findAll();
     }
 
     //수정
