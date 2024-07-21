@@ -4,14 +4,20 @@ package rofla.back.back.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import rofla.back.back.model.Subject;
+import rofla.back.back.model.SubjectInfo;
+import rofla.back.back.model.User;
+import rofla.back.back.repository.SubjectInfoRepository;
 import rofla.back.back.repository.SubjectRepository;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 public class SubjectService {
     private final SubjectRepository subjectRepository;
+    private final SubjectInfoRepository subjectInfoRepository;
 
     // 수업 생성
     public void saveSubject(Subject subject) {
@@ -35,8 +41,6 @@ public class SubjectService {
                 });
     }
 
-
-    //삭제
     public void deleteSubject(Subject subject) {
         if(subjectRepository.findBySubjectNumAndUsername(subject.getSubjectNum(), subject.getUsername()).isPresent()) {
             subjectRepository.delete(subjectRepository.findBySubjectNumAndUsername(subject.getSubjectNum(), subject.getUsername()).get());
@@ -46,5 +50,19 @@ public class SubjectService {
         }
     }
 
-    public void find
+    public void findEmptyTime(User user){
+        List<Subject> subjectList = subjectRepository.findAllByUsername(user);
+        List<SubjectInfo> subjectInfoList = new ArrayList<>();
+        for(Subject subject: subjectList){
+            subjectInfoList.add(subject.getSubjectNum());
+        }
+        for(int i=0;i<subjectInfoList.size()-1;i++){
+            for(int j=0;j<subjectInfoList.size()-i-1;j++){
+                if(Integer.parseInt(subjectInfoList.get(j).getStartTime()) > Integer.parseInt(subjectInfoList.get(j+1).getStartTime())){
+
+                }
+            }
+        }
+        //subjectInfoRepository.findBySubjectNum()
+    }
 }

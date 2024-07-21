@@ -1,7 +1,6 @@
 package rofla.back.back.service;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import rofla.back.back.model.User;
 import rofla.back.back.repository.UserRepository;
@@ -12,7 +11,6 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class UserService {
     private final UserRepository userRepository;
-    private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     // 회원가입
     public void saveUser(User users) {
@@ -21,7 +19,7 @@ public class UserService {
         }
         // 암호화 후 저장
         String password =  users.getPassword();
-        users.setPassword(bCryptPasswordEncoder.encode(password));
+        users.setPassword(password);
         userRepository.save(users);
     }
 

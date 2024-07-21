@@ -117,8 +117,31 @@ public class ExcelService {
         }
         if (matcher.find()) {
             String day = matcher.group(1); // 요일
-            startTime.append(day).append(matcher.group(2).split("-")[0]); // 시작 시간2
-            endTime.append(day).append(matcher.group(2).split("-")[1]); // 마감 시간2
+            switch (day){
+                case "월":
+                    day="1";
+                    break;
+                case "화":
+                    day="2";
+                    break;
+                case "수":
+                    day="3";
+                    break;
+                case "목":
+                    day="4";
+                    break;
+                case "금":
+                    day="5";
+                    break;
+                case "토":
+                    day="6";
+                    break;
+                case "일":
+                    day="7";
+                    break;
+            }
+            startTime.append(day).append(matcher.group(2).split("-")[0]); // 시작 교시
+            endTime.append(day).append(matcher.group(2).split("-")[1]); // 마감 교시
         }
     }
 }
