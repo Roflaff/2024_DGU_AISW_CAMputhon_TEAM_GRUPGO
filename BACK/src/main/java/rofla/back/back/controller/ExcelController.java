@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import rofla.back.back.jwt.JWTUtil;
 import rofla.back.back.model.SubjectInfo;
 import rofla.back.back.repository.SubjectInfoRepository;
 import rofla.back.back.repository.SubjectRepository;
