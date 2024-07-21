@@ -1,21 +1,22 @@
 package rofla.back.back.service;
 
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import rofla.back.back.model.Subject;
 import rofla.back.back.model.SubjectInfo;
-import rofla.back.back.model.User;
-import rofla.back.back.repository.SubjectInfoRepository;
+import rofla.back.back.repository.SubjectRepository;
 
 import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class SubjectInfoService {
-    private final SubjectInfoRepository subjectInfoRepository;
+public class SubjectService {
+    private final SubjectRepository subjectRepository;
 
-    // 수업정보 생성
-    public void saveSubjectInfo(SubjectInfo subjectInfo) {
-        if (subjectInfoRepository.findBySubjectNum(subjectInfo.getSubjectNum()).isPresent()) {
+    // 수업 생성
+    public void saveSubjectInfo(Subject subject) {
+        if (subjectRepository.findBySubject(subjectInfo.getSubjectNum()).isPresent()) {
             throw new IllegalArgumentException("동일한 수업이 존재 합니다.");
         }
     }

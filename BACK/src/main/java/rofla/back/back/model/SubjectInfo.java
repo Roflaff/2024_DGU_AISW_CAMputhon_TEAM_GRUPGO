@@ -23,10 +23,10 @@ public class SubjectInfo {
     private String subjectNum;
 
     @Column(name = "start_time")
-    private Float startTime;
+    private String startTime;
 
     @Column(name = "end_time")
-    private Float endTime;
+    private String endTime;
 
     @Column(name = "classroom", length = 30)
     private String classroom;
