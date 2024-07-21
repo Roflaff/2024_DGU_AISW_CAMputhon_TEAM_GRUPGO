@@ -3,7 +3,9 @@ package rofla.back.back.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import rofla.back.back.dto.SubjectRequest;
 import rofla.back.back.model.Subject;
+import rofla.back.back.model.SubjectInfo;
 import rofla.back.back.model.User;
 import rofla.back.back.service.SubjectService;
 import rofla.back.back.service.UserService;
@@ -17,6 +19,17 @@ import java.util.Optional;
 public class SubjectController {
     private final SubjectService subjectService;
 
+    // 데이터 삽입.
+    @PostMapping("/add")
+    public ResponseEntity<String> addSubject(@RequestBody Subject Subject) {
+        try {
+            subjectService.saveSubject(Subject);
+            return ResponseEntity.ok("added successfully");
+        }  catch (IllegalArgumentException e) {
+            return ResponseEntity.status(409).body(e.getMessage());
+        }
+    }
+
     @GetMapping("/getAll")
     public ResponseEntity<List<Subject>> getAllSubject() {
         List<Subject> total = subjectService.getAllSubject();
@@ -24,9 +37,9 @@ public class SubjectController {
     }
 
     // 데이터 조회
-    @GetMapping("/search/{subjectNum}/{userName}")
-    public ResponseEntity<Subject> searchSubject(@PathVariable String subjectNum, String userName){
-        Optional<Subject> content = subjectService.searchSubjectBySubjectNumAndUsername(subjectNum, userName);
+    @GetMapping("/search/SubjectRequest")
+    public ResponseEntity<Subject> searchSubject(@RequestBody SubjectRequest subjectRequest){
+        Optional<Subject> content = subjectService.searchSubjectBySubjectNumAndUsername(subjectRequest.getSubjectNum(), subjectRequest.getUserName());
         return content.map(ResponseEntity::ok)
                 .orElseGet(()->ResponseEntity.notFound().build());
     }
@@ -40,10 +53,10 @@ public class SubjectController {
     }
 
     //b의 값 찾아서, 해당 행을 삭제,
-    @DeleteMapping("/delete/{subjectNum}/{userName}")
-    public ResponseEntity<String> deleteSubject(@PathVariable String subjectNum, String userName) {
+    @DeleteMapping("/delete/SubjectRequest")
+    public ResponseEntity<String> deleteSubject(@RequestBody SubjectRequest subjectRequest) {
         try {
-            subjectService.deleteSubject(subjectNum, userName);
+            subjectService.deleteSubject(subjectRequest.getSubjectNum(), subjectRequest.getUserName());
             return ResponseEntity.ok("delete!!");
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(409).body(e.getMessage());

@@ -12,10 +12,7 @@
       <user-name>grupgo</user-name>
       <schema-mapping>
         <introspection-scope>
-          <node kind="schema">
-            <name qname="@" />
-            <name qname="grupgo" />
-          </node>
+          <node kind="schema" qname="grupgo" />
         </introspection-scope>
       </schema-mapping>
     </data-source>

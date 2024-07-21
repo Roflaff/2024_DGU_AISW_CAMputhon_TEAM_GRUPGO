@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62fb54ec-fc80-4c6f-8f68-3ad87f48b226" name="Changes" comment="ksp" />
+    <list default="true" id="601e404f-a46a-49d5-95ff-a4ce0aea31f9" name="Changes" comment="food, user, subject 컨트롤러 다구현&#10;삭제나 조회 특히 한개체씩할때 테스트">
+      <change afterPath="$PROJECT_DIR$/src/main/java/rofla/back/back/controller/BehaviorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/rofla/back/back/controller/DiaryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/rofla/back/back/controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/rofla/back/back/controller/OrderedFoodController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/rofla/back/back/dto/DiaryRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/rofla/back/back/dto/OrderRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/rofla/back/back/dto/SubjectRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rofla/back/back/controller/FoodController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rofla/back/back/controller/FoodController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rofla/back/back/controller/SubjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rofla/back/back/controller/SubjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rofla/back/back/controller/SubjectInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rofla/back/back/controller/SubjectInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rofla/back/back/service/BehaviorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rofla/back/back/service/BehaviorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rofla/back/back/service/DiaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rofla/back/back/service/DiaryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rofla/back/back/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rofla/back/back/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rofla/back/back/service/OrderedFoodService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rofla/back/back/service/OrderedFoodService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,26 +34,12 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <task path="$PROJECT_DIR$">
-          <activation />
-        </task>
         <projects_view>
           <tree_state>
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="back" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="back" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="back" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -49,110 +51,66 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
+        <option value="com.intellij.jpb.JpaEntity" />
         <option value="Class" />
       </list>
     </option>
   </component>
-  <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="origin/back" />
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$/.." value="6c0d6fff0363fd53eb95be966376a5635739abb6" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-    <option name="RESET_MODE" value="MIXED" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;durinnn&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Roflaff/2024_DGU_AISW_CAMputhon_TEAM_GRUPGO.git&quot;,
+    &quot;accountId&quot;: &quot;cc7ff931-17e0-4698-8815-3d214747a814&quot;
+  }
+}</component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
   </component>
-  <component name="KubernetesApiPersistence">{}</component>
-  <component name="KubernetesApiProvider">{
-  &quot;isMigrated&quot;: true
-}</component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 2
+  &quot;associatedIndex&quot;: 3
 }</component>
-  <component name="ProjectId" id="2jYe1kemIHaZ9Ci6cIdZiZv5jHQ" />
+  <component name="ProjectId" id="2jYQbQGsFFFtqwX7TUMeK4RxAO3" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.BACK [build].executor": "Run",
-    "Gradle.BACK [dependencies].executor": "Run",
-    "Gradle.Build BACK.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.BackApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/kimseonpyo/Desktop/2024_DGU_AISW_CAMputhon_TEAM_GRUPGO/BACK",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Build BACK.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.BackApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
-  <component name="RunManager" selected="Gradle.BACK [build]">
-    <configuration name="BACK [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="BACK [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="dependencies" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
+}</component>
+  <component name="RunManager">
     <configuration name="BackApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="back.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="rofla.back.back.BackApplication" />
@@ -160,281 +118,148 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Gradle.BACK [build]" />
-        <item itemvalue="Gradle.BACK [dependencies]" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="62fb54ec-fc80-4c6f-8f68-3ad87f48b226" name="Changes" comment="" />
-      <created>1721568224847</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1721568224847</updated>
-      <workItem from="1721568226102" duration="13847000" />
-      <workItem from="1721588269573" duration="5020000" />
-    </task>
-    <task id="LOCAL-00001" summary="ksp">
+    <task id="LOCAL-00001" summary="mm">
       <option name="closed" value="true" />
-      <created>1721568562507</created>
+      <created>1721556905249</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1721568562507</updated>
+      <updated>1721556905249</updated>
     </task>
-    <task id="LOCAL-00002" summary="ksp">
+    <task id="LOCAL-00002" summary="mm">
       <option name="closed" value="true" />
-      <created>1721569093610</created>
+      <created>1721561373712</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1721569093610</updated>
+      <updated>1721561373712</updated>
     </task>
-    <task id="LOCAL-00003" summary="ksp">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="601e404f-a46a-49d5-95ff-a4ce0aea31f9" name="Changes" comment="mm" />
+      <created>1721561602174</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1721561602174</updated>
+      <workItem from="1721561603840" duration="15729000" />
+      <workItem from="1721578478866" duration="11626000" />
+      <workItem from="1721593161567" duration="1907000" />
+    </task>
+    <task id="LOCAL-00003" summary="subject_info에 교수컬럼추가.&#10;레포다만듦">
       <option name="closed" value="true" />
-      <created>1721569556722</created>
+      <created>1721564753256</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1721569556722</updated>
+      <updated>1721564753256</updated>
     </task>
-    <task id="LOCAL-00004" summary="ksp">
+    <task id="LOCAL-00004" summary="subject_info에 교수컬럼추가.&#10;레포다만듦">
       <option name="closed" value="true" />
-      <created>1721570336757</created>
+      <created>1721565169489</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1721570336757</updated>
+      <updated>1721565169489</updated>
     </task>
-    <task id="LOCAL-00005" summary="ksp">
+    <task id="LOCAL-00005" summary="수업시간 바차로 바꿈">
       <option name="closed" value="true" />
-      <created>1721573799541</created>
+      <created>1721565533256</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1721573799541</updated>
+      <updated>1721565533256</updated>
     </task>
-    <task id="LOCAL-00006" summary="ksp">
+    <task id="LOCAL-00006" summary="UserService완성">
       <option name="closed" value="true" />
-      <created>1721573906296</created>
+      <created>1721567019804</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1721573906296</updated>
+      <updated>1721567019804</updated>
     </task>
-    <task id="LOCAL-00007" summary="bbb">
+    <task id="LOCAL-00007" summary="시간 바차바꾸고 어쩌구저쩌구함머리아파씨발">
       <option name="closed" value="true" />
-      <created>1721575449906</created>
+      <created>1721569541554</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1721575449906</updated>
+      <updated>1721569541554</updated>
     </task>
-    <task id="LOCAL-00008" summary="JWT delete">
+    <task id="LOCAL-00008" summary="food_info컬럼추가,서비스몇개더">
       <option name="closed" value="true" />
-      <created>1721575703304</created>
+      <created>1721573248233</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1721575703304</updated>
+      <updated>1721573248233</updated>
     </task>
-    <task id="LOCAL-00009" summary="u">
+    <task id="LOCAL-00009" summary="behavior table구조약간수정&#10;서비스기본 다함">
       <option name="closed" value="true" />
-      <created>1721576431002</created>
+      <created>1721579842723</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1721576431003</updated>
+      <updated>1721579842723</updated>
     </task>
-    <task id="LOCAL-00010" summary="암호화 삭제">
+    <task id="LOCAL-00010" summary="behavior table구조약간수정&#10;서비스기본 다함">
       <option name="closed" value="true" />
-      <created>1721577256948</created>
+      <created>1721580134716</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1721577256948</updated>
+      <updated>1721580134716</updated>
     </task>
-    <task id="LOCAL-00011" summary="암호화 삭제">
+    <task id="LOCAL-00011" summary="서비스다한거에 컨트롤러복구">
       <option name="closed" value="true" />
-      <created>1721577284919</created>
+      <created>1721581685531</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1721577284919</updated>
+      <updated>1721581685531</updated>
     </task>
-    <task id="LOCAL-00012" summary="암호화 삭제">
+    <task id="LOCAL-00012" summary="jwt다지우고 푸드컨트롤러">
       <option name="closed" value="true" />
-      <created>1721578502611</created>
+      <created>1721587277501</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1721578502611</updated>
+      <updated>1721587277501</updated>
     </task>
-    <task id="LOCAL-00013" summary="QR 불러오기 추가 /QR">
+    <task id="LOCAL-00013" summary="food, user, subject 컨트롤러 다구현&#10;삭제나 조회 특히 한개체씩할때 테스트">
       <option name="closed" value="true" />
-      <created>1721579777384</created>
+      <created>1721590490863</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1721579777384</updated>
+      <updated>1721590490863</updated>
     </task>
-    <task id="LOCAL-00014" summary="QR 불러오기 추가 /QR">
+    <task id="LOCAL-00014" summary="food, user, subject 컨트롤러 다구현&#10;삭제나 조회 특히 한개체씩할때 테스트">
       <option name="closed" value="true" />
-      <created>1721579784341</created>
+      <created>1721590611136</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1721579784341</updated>
+      <updated>1721590611136</updated>
     </task>
-    <task id="LOCAL-00015" summary="삭제된 파일 확인">
+    <task id="LOCAL-00015" summary="food, user, subject 컨트롤러 다구현&#10;삭제나 조회 특히 한개체씩할때 테스트">
       <option name="closed" value="true" />
-      <created>1721580275621</created>
+      <created>1721591076728</created>
       <option name="number" value="00015" />
       <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1721580275621</updated>
+      <updated>1721591076728</updated>
     </task>
-    <task id="LOCAL-00016" summary="삭제된 파일 확인">
-      <option name="closed" value="true" />
-      <created>1721588337679</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1721588337679</updated>
-    </task>
-    <task id="LOCAL-00017" summary="삭제된 파일 확인">
-      <option name="closed" value="true" />
-      <created>1721588484061</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1721588484061</updated>
-    </task>
-    <task id="LOCAL-00018" summary="ksp">
-      <option name="closed" value="true" />
-      <created>1721590472639</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1721590472639</updated>
-    </task>
-    <task id="LOCAL-00019" summary="ksp">
-      <option name="closed" value="true" />
-      <created>1721590636685</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1721590636685</updated>
-    </task>
-    <task id="LOCAL-00020" summary="ksp">
-      <option name="closed" value="true" />
-      <created>1721590887972</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1721590887972</updated>
-    </task>
-    <task id="LOCAL-00021" summary="ksp">
-      <option name="closed" value="true" />
-      <created>1721590975485</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1721590975485</updated>
-    </task>
-    <task id="LOCAL-00022" summary="ksp">
-      <option name="closed" value="true" />
-      <created>1721590992484</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1721590992484</updated>
-    </task>
-    <task id="LOCAL-00023" summary="ksp">
-      <option name="closed" value="true" />
-      <created>1721591089795</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1721591089795</updated>
-    </task>
-    <task id="LOCAL-00024" summary="ksp">
-      <option name="closed" value="true" />
-      <created>1721591132379</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1721591132379</updated>
-    </task>
-    <task id="LOCAL-00025" summary="ksp">
-      <option name="closed" value="true" />
-      <created>1721591137876</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1721591137876</updated>
-    </task>
-    <task id="LOCAL-00026" summary="ksp">
-      <option name="closed" value="true" />
-      <created>1721591147950</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1721591147950</updated>
-    </task>
-    <task id="LOCAL-00027" summary="ksp">
-      <option name="closed" value="true" />
-      <created>1721591636594</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1721591636594</updated>
-    </task>
-    <task id="LOCAL-00028" summary="ksp">
-      <option name="closed" value="true" />
-      <created>1721593465623</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1721593465623</updated>
-    </task>
-    <task id="LOCAL-00029" summary="ksp">
-      <option name="closed" value="true" />
-      <created>1721593482095</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1721593482095</updated>
-    </task>
-    <task id="LOCAL-00030" summary="ksp">
-      <option name="closed" value="true" />
-      <created>1721593610477</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1721593610477</updated>
-    </task>
-    <task id="LOCAL-00031" summary="ksp">
-      <option name="closed" value="true" />
-      <created>1721595795507</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1721595795507</updated>
-    </task>
-    <option name="localTasksCounter" value="32" />
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -451,7 +276,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="origin/back" />
                       </list>
                     </value>
                   </entry>
@@ -464,13 +289,16 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="bbb" />
-    <MESSAGE value="JWT delete" />
-    <MESSAGE value="u" />
-    <MESSAGE value="암호화 삭제" />
-    <MESSAGE value="QR 불러오기 추가 /QR" />
-    <MESSAGE value="삭제된 파일 확인" />
-    <MESSAGE value="ksp" />
-    <option name="LAST_COMMIT_MESSAGE" value="ksp" />
+    <MESSAGE value="mm" />
+    <MESSAGE value="subject_info에 교수컬럼추가.&#10;레포다만듦" />
+    <MESSAGE value="수업시간 바차로 바꿈" />
+    <MESSAGE value="UserService완성" />
+    <MESSAGE value="시간 바차바꾸고 어쩌구저쩌구함머리아파씨발" />
+    <MESSAGE value="food_info컬럼추가,서비스몇개더" />
+    <MESSAGE value="behavior table구조약간수정&#10;서비스기본 다함" />
+    <MESSAGE value="서비스다한거에 컨트롤러복구" />
+    <MESSAGE value="jwt다지우고 푸드컨트롤러" />
+    <MESSAGE value="food, user, subject 컨트롤러 다구현&#10;삭제나 조회 특히 한개체씩할때 테스트" />
+    <option name="LAST_COMMIT_MESSAGE" value="food, user, subject 컨트롤러 다구현&#10;삭제나 조회 특히 한개체씩할때 테스트" />
   </component>
 </project>
