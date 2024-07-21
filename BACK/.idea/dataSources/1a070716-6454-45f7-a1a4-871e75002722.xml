@@ -1030,7 +1030,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="292" parent="1" name="grupgo">
-      <LastIntrospectionLocalTimestamp>2024-07-21.19:27:58</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-07-21.16:22:22</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_general_ci</CollationName>
     </schema>
     <user id="293" parent="1" name="grupgo"/>
@@ -1418,6 +1418,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="376" parent="305" name="role">
       <DasType>varchar(2)|0s</DasType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
+      <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
     <index id="377" parent="305" name="PRIMARY">
