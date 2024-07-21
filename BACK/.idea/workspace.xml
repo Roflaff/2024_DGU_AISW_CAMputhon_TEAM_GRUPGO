@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62fb54ec-fc80-4c6f-8f68-3ad87f48b226" name="Changes" comment="ksp" />
+    <list default="true" id="62fb54ec-fc80-4c6f-8f68-3ad87f48b226" name="Changes" comment="ksp">
+      <change afterPath="$PROJECT_DIR$/src/main/java/rofla/back/back/dto/loginRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -149,7 +152,7 @@
       <option name="presentableId" value="Default" />
       <updated>1721568224847</updated>
       <workItem from="1721568226102" duration="13847000" />
-      <workItem from="1721588269573" duration="1753000" />
+      <workItem from="1721588269573" duration="2228000" />
     </task>
     <task id="LOCAL-00001" summary="ksp">
       <option name="closed" value="true" />
@@ -351,7 +354,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721591137876</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="ksp">
+      <option name="closed" value="true" />
+      <created>1721591147950</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1721591147950</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
