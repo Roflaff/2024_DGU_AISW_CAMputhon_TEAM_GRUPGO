@@ -26,12 +26,33 @@ public class UserService {
     }
 
     //조회
-    public Optional<TableName> searchTestByCol2Name(String c) {
-        return testRepository.findByC(c);
+    public Optional<User> searchUserByUsername(String username) {
+        return userRepository.findByUsername(username);
     }
 
     //수정
+    public Optional<User> modifyUser(User newUser) {
+        return userRepository.findByUsername(newUser.getUsername())
+                .map(User -> {
+                    User.setId(newUser.getId());
+                    User.setName(newUser.getName());
+                    User.setUsername(newUser.getUsername());
+                    User.setPassword(newUser.getPassword());
+                    User.setPhoneNum(newUser.getPhoneNum());
+                    User.setMajor(newUser.getMajor());
+                    User.setRole(newUser.getRole());
+                    return userRepository.save(User);
+                });
+    }
+
 
     //삭제
-
+    public void deleteUser(String username) {
+        if(userRepository.findByUsername(username).isPresent()) {
+            userRepository.delete(userRepository.findByUsername(username).get());
+        }
+        else {
+            System.out.println("not Present in DB!");
+        }
+    }
 }
