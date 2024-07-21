@@ -2,9 +2,11 @@ package rofla.back.back.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import rofla.back.back.model.Food;
 import rofla.back.back.model.User;
 import rofla.back.back.repository.UserRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -22,6 +24,11 @@ public class UserService {
     //조회
     public Optional<User> searchUserByUsername(String username) {
         return userRepository.findByUsername(username);
+    }
+
+    //모두 조회
+    public List<User> getAllUser() {
+        return userRepository.findAll();
     }
 
     //수정

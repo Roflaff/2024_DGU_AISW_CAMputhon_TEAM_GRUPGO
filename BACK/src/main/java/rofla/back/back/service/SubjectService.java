@@ -4,14 +4,19 @@ package rofla.back.back.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import rofla.back.back.model.Subject;
+import rofla.back.back.repository.SubjectInfoRepository;
 import rofla.back.back.repository.SubjectRepository;
+import rofla.back.back.repository.UserRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 public class SubjectService {
     private final SubjectRepository subjectRepository;
+    private final SubjectInfoRepository subjectInfoRepository;
+    private final UserRepository userRepository;
 
     // 수업 생성
     public void saveSubject(Subject subject) {
@@ -23,6 +28,15 @@ public class SubjectService {
     //조회
     public Optional<Subject> searchSubjectBySubjectNumAndUsername(Subject subject) {
         return subjectRepository.findBySubjectNumAndUsername(subject.getSubjectNum(), subject.getUsername());
+    }
+
+    public Optional<Subject> searchSubjectBySubjectNumAndUsername(String subjectNum, String username) {
+        return subjectRepository.findBySubjectNumAndUsername(subjectInfoRepository.findBySubjectNum(subjectNum).get(), userRepository.findByUsername(username).get());
+    }
+
+    //모두 조회
+    public List<Subject> getAllSubject() {
+        return subjectRepository.findAll();
     }
 
     //수정
@@ -40,6 +54,15 @@ public class SubjectService {
     public void deleteSubject(Subject subject) {
         if(subjectRepository.findBySubjectNumAndUsername(subject.getSubjectNum(), subject.getUsername()).isPresent()) {
             subjectRepository.delete(subjectRepository.findBySubjectNumAndUsername(subject.getSubjectNum(), subject.getUsername()).get());
+        }
+        else {
+            System.out.println("not Present in DB!");
+        }
+    }
+
+    public void deleteSubject(String subjectNum, String userName) {
+        if(subjectRepository.findBySubjectNumAndUsername(subjectInfoRepository.findBySubjectNum(subjectNum).get(), userRepository.findByUsername(userName).get()).isPresent()) {
+            subjectRepository.delete(subjectRepository.findBySubjectNumAndUsername(subjectInfoRepository.findBySubjectNum(subjectNum).get(), userRepository.findByUsername(userName).get()).get());
         }
         else {
             System.out.println("not Present in DB!");

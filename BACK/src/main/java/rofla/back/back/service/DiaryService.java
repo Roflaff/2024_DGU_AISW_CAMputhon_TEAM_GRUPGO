@@ -3,11 +3,13 @@ package rofla.back.back.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import rofla.back.back.model.Diary;
+import rofla.back.back.model.Food;
 import rofla.back.back.model.Order;
 import rofla.back.back.model.User;
 import rofla.back.back.repository.DiaryRepository;
 import rofla.back.back.repository.OrderRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -28,6 +30,9 @@ public class DiaryService {
         public Optional<Diary> searchDiaryByUsernameAndDateAndEmptyNum(Diary diary) {
             return diaryRepository.findByUsernameAndDateAndEmptyNum(diary.getUsername(), diary.getDate(), diary.getEmptyNum());
         }
+
+        //모두 조회
+        public List<Diary> getAllDiary() {  return diaryRepository.findAll(); }
 
         //수정
         public Optional<Diary> modifyDiary(Diary newDiary) {
