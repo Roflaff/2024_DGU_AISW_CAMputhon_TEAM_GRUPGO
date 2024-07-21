@@ -10,6 +10,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
 import rofla.back.back.jwt.CustomUserDetails;
 import rofla.back.back.jwt.JWTUtil;
+import rofla.back.back.model.User;
 
 import java.io.IOException;
 
