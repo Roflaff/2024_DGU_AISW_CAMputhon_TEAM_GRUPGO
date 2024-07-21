@@ -44,7 +44,7 @@ public class JWTFilter extends OncePerRequestFilter {
             System.out.println("token null");
             filterChain.doFilter(request, response);
 
-            //조건이 해당되면 메소드 종료 (필수)
+            //조건이 해당되면 메소드 종료
             return;
         }
 
@@ -56,7 +56,7 @@ public class JWTFilter extends OncePerRequestFilter {
             System.out.println("token expired");
             filterChain.doFilter(request, response);
 
-            //조건이 해당되면 메소드 종료 (필수)
+            //조건이 해당되면 메소드 종료
             return;
         }
 
