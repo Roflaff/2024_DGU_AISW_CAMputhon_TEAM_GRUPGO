@@ -18,7 +18,7 @@ public class FoodController {
 
     // 데이터 삽입.
     @PostMapping("/add")
-    public ResponseEntity<String> addTest(@RequestBody Food food) {
+    public ResponseEntity<String> addFood(@RequestBody Food food) {
         try {
             foodService.saveFood(food);
             return ResponseEntity.ok("added successfully");
@@ -29,7 +29,7 @@ public class FoodController {
 
     // 데이터 조회
     @GetMapping("/search/{foodname}")
-    public ResponseEntity<Food> searchTest(@PathVariable String foodname){
+    public ResponseEntity<Food> searchFood(@PathVariable String foodname){
         Optional<Food> content = foodService.searchFoodByName(foodname);
         return content.map(ResponseEntity::ok)
                 .orElseGet(()->ResponseEntity.notFound().build());
@@ -42,7 +42,7 @@ public class FoodController {
     }
 
     @PutMapping("/update")
-    public ResponseEntity<Food> updateTest(@RequestBody Food newfood) {
+    public ResponseEntity<Food> updateFood(@RequestBody Food newfood) {
         Optional<Food> t1 = foodService.modifyFood(newfood);
         return t1.map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
@@ -50,7 +50,7 @@ public class FoodController {
 
     //b의 값 찾아서, 해당 행을 삭제,
     @DeleteMapping("/delete/{name}")
-    public ResponseEntity<String> deleteTest(@PathVariable String name) {
+    public ResponseEntity<String> deleteFood(@PathVariable String name) {
         try {
             foodService.deleteFood(name);
             return ResponseEntity.ok("delete!!");

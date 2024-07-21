@@ -50,7 +50,7 @@ public class OrderedFoodService {
 
 
     //삭제
-    public void deleteOrder(Integer orderId) {
+    public void deleteOrderedFood(Integer orderId) {
         if(orderedFoodRepository.findByOrderId(orderId).isPresent()) {
             orderedFoodRepository.delete(orderedFoodRepository.findByOrderId(orderId).get());
         }

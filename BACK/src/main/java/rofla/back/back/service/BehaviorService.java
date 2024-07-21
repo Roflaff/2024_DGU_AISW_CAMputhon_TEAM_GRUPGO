@@ -52,9 +52,9 @@ public class BehaviorService {
 
 
         //삭제
-        public void deleteBehavior(Behavior behavior) {
-            if(behaviorRepository.findByUsername(behavior.getUsername()).isPresent()) {
-                behaviorRepository.delete(behaviorRepository.findByUsername(behavior.getUsername()).get());
+        public void deleteBehavior(String username) {
+            if(behaviorRepository.findByUsername(username).isPresent()) {
+                behaviorRepository.delete(behaviorRepository.findByUsername(username).get());
             }
             else {
                 System.out.println("not Present in DB!");
