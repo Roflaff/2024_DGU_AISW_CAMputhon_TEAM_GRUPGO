@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import rofla.back.back.model.Food;
 import rofla.back.back.repository.FoodRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -26,6 +27,12 @@ public class FoodService {
         public Optional<Food> searchFoodByName(String name) {
             return foodRepository.findByName(name);
         }
+
+        //모두 조회
+        public List<Food> getAllFood() {
+            return foodRepository.findAll();
+        }
+
 
         //수정
         public Optional<Food> modifyFood(Food newFood) {
