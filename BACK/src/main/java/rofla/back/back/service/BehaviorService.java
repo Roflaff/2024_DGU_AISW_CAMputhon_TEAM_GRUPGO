@@ -52,6 +52,4 @@ public class BehaviorService {
                 System.out.println("not Present in DB!");
             }
         }
-    }
-
 }
