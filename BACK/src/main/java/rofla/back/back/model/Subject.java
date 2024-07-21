@@ -10,6 +10,7 @@ import lombok.Setter;
 @Table(name = "subject", schema = "grupgo")
 public class Subject {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "subject_table_id", nullable = false)
     private Integer id;
 
