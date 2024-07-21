@@ -62,13 +62,13 @@ public class ExcelService {
                             break;
                         case 9:
                             // 과목명
-                            subjectInfo.setSubjectName(cell.toString());
+                            subject.setSubjectName(cell.toString());
                             break;
                         case 8:
                             break;
                         case 9:
                             // 학점
-                            subjectInfo.setGrade(Integer.parseInt(cell.toString()));
+                            subject.setGrade(Integer.parseInt(cell.toString()));
                             break;
                     }
                 }
