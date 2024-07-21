@@ -13,6 +13,11 @@ public class Order {
     @Column(name = "id", nullable = false)
     private Integer id;
 
+    @MapsId
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "id", nullable = false, referencedColumnName = "order_id")
+    private OrderedFood orderedFood;
+
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "username", nullable = false, referencedColumnName = "username")
     private User username;
