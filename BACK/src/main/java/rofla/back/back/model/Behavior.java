@@ -12,9 +12,13 @@ import java.math.BigDecimal;
 @Table(name = "behavior", schema = "grupgo")
 public class Behavior {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "username", nullable = false)
-    private Integer id;
+    @Column(name = "username", nullable = false, length = 10)
+    private String username;
+
+    @MapsId
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "username", nullable = false, referencedColumnName = "username")
+    private User user;
 
     @Column(name = "rest", precision = 5, scale = 1)
     private BigDecimal rest;
