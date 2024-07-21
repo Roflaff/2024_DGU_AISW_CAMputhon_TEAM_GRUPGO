@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import rofla.back.back.jwt.JWTUtil;
 import rofla.back.back.model.User;
 import rofla.back.back.service.UserService;
 
@@ -16,7 +15,6 @@ import java.io.IOException;
 public class UserController {
 
     private final UserService userService;
-    private final JWTUtil jwtUtil;
 
     // POST :  [/User/join] 유저 추가 (학번 중복 확인)
     @PostMapping("/join")

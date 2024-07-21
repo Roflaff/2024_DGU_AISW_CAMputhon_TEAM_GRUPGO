@@ -26,7 +26,7 @@ public class SubjectInfo {
     @Column(name = "end_time")
     private String endTime;
 
-    @Column(name = "classroom", length = 30)
+    @Column(name = "classroom", length = 300)
     private String classroom;
 
     @Column(name = "professor", nullable = false, length = 30)
