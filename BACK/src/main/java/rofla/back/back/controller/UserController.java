@@ -1,7 +1,6 @@
 package rofla.back.back.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -29,11 +28,5 @@ public class UserController {
             return ResponseEntity.status(409).body(e.getMessage());
         }
     }
-    @PostMapping("/upload/excels")
-    public ResponseEntity<?> readSubjectExcelFile(@RequestParam("file")MultipartFile file) throws IOException{
-        if(file.isEmpty()){
-            throw new IllegalArgumentException("Uploaded file is empty");
-        }
-        Subject
-    }
+
 }

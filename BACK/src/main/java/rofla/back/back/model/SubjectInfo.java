@@ -1,6 +1,9 @@
 package rofla.back.back.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,7 +13,6 @@ import lombok.Setter;
 @Table(name = "subject_info", schema = "grupgo")
 public class SubjectInfo {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
@@ -26,7 +28,10 @@ public class SubjectInfo {
     @Column(name = "end_time")
     private Float endTime;
 
-    @Column(name = "classroom", nullable = false, length = 30)
+    @Column(name = "classroom", length = 30)
     private String classroom;
+
+    @Column(name = "professor", nullable = false, length = 30)
+    private String professor;
 
 }

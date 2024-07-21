@@ -1,9 +1,6 @@
 package rofla.back.back.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,5 +18,9 @@ public class OrderedFood {
 
     @Column(name = "food_cnt", nullable = false)
     private Integer foodCnt;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "food_id", nullable = false)
+    private Food food;
 
 }
