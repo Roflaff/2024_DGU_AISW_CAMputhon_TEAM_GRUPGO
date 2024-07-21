@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import rofla.back.back.dto.loginRequest;
-import rofla.back.back.model.Food;
 import rofla.back.back.model.User;
 import rofla.back.back.service.UserService;
 
