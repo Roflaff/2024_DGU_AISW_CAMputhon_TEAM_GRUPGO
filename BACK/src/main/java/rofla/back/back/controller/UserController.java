@@ -29,11 +29,5 @@ public class UserController {
             return ResponseEntity.status(409).body(e.getMessage());
         }
     }
-    @PostMapping("/upload/excels")
-    public ResponseEntity<?> readSubjectExcelFile(@RequestParam("file")MultipartFile file) throws IOException{
-        if(file.isEmpty()){
-            throw new IllegalArgumentException("Uploaded file is empty");
-        }
-        Subject
-    }
+
 }
