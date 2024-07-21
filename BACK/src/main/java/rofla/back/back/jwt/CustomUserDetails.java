@@ -2,7 +2,6 @@ package rofla.back.back.jwt;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import rofla.back.back.model.User;
 
 import java.util.ArrayList;
 import java.util.Collection;

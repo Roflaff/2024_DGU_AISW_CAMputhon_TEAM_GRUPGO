@@ -7,18 +7,23 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "subject", schema = "grupgo")
-public class Subject {
+@Table(name = "diary", schema = "grupgo")
+public class Diary {
     @Id
-    @Column(name = "subject_table_id", nullable = false)
+    @Column(name = "id", nullable = false)
     private Integer id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "username", nullable = false, referencedColumnName = "username")
     private User username;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "subject_num", nullable = false, referencedColumnName = "subject_num")
-    private SubjectInfo subjectNum;
+    @Column(name = "date", nullable = false, length = 15)
+    private String date;
+
+    @Column(name = "body", length = 1000)
+    private String body;
+
+    @Column(name = "empty_num", nullable = false)
+    private Integer emptyNum;
 
 }
