@@ -1,42 +1,46 @@
 package rofla.back.back.service;
 
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+import rofla.back.back.model.Order;
 import rofla.back.back.model.Subject;
 import rofla.back.back.repository.OrderRepository;
-import rofla.back.back.repository.SubjectRepository;
 
 import java.util.Optional;
 
+@Service
+@RequiredArgsConstructor
 public class OrderService {
 
     private final OrderRepository orderRepository;
 
-    // 수업 생성
-    public void saveSubject(Subject subject) {
-        if (orderRepository.findBySubjectNumAndUsername(subject.getSubjectNum(), subject.getUsername()).isPresent()) {
-            throw new IllegalArgumentException("동일한 수업이 존재 합니다.");
+    // 주문 등록
+    public void saveOrder(Order order) {
+        if (orderRepository.findByUsernameAndDate(order.getUsername(), order.getDate()).isPresent()) {
+            throw new IllegalArgumentException("동일한 주문이 존재 합니다.");
         }
     }
 
     //조회
-    public Optional<Subject> searchSubjectBySubjectNumAndUsername(Subject subject) {
-        return subjectRepository.findBySubjectNumAndUsername(subject.getSubjectNum(), subject.getUsername());
+    public Optional<Order> searchOrderByUsernameAndDate(Order order) {
+        return orderRepository.findByUsernameAndDate(order.getUsername(), order.getDate());
     }
 
     //수정
-    public Optional<Subject> modifySubject(Subject newSubject) {
-        return subjectRepository.findBySubjectNumAndUsername(newSubject.getSubjectNum(), newSubject.getUsername())
-                .map(Subject -> {
-                    Subject.setUsername(newSubject.getUsername());
-                    Subject.setSubjectNum(newSubject.getSubjectNum());
-                    return subjectRepository.save(Subject);
+    public Optional<Order> modifyOrder(Order newOrder) {
+        return orderRepository.findByUsernameAndDate(newOrder.getUsername(), newOrder.getDate())
+                .map(Order -> {
+                    Order.setUsername(newOrder.getUsername());
+                    Order.setDate(newOrder.getDate());
+                    return orderRepository.save(Order);
                 });
     }
 
 
     //삭제
-    public void deleteSubject(Subject subject) {
-        if(subjectRepository.findBySubjectNumAndUsername(subject.getSubjectNum(), subject.getUsername()).isPresent()) {
-            subjectRepository.delete(subjectRepository.findBySubjectNumAndUsername(subject.getSubjectNum(), subject.getUsername()).get());
+    public void deleteOrder(Order order) {
+        if(orderRepository.findByUsernameAndDate(order.getUsername(), order.getDate()).isPresent()) {
+            orderRepository.delete(orderRepository.findByUsernameAndDate(order.getUsername(), order.getDate()).get());
         }
         else {
             System.out.println("not Present in DB!");
