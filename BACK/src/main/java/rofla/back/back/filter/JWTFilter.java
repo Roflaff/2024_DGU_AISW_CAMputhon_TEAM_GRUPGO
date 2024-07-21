@@ -30,8 +30,10 @@ public class JWTFilter extends OncePerRequestFilter {
         //request에서 Authorization 헤더를 찾음
         String authorization= request.getHeader("Authorization");
 
+
         // /login 경로에 대해서는 JWT 검증을 하지 않음
         String requestPath = request.getRequestURI();
+
         if (requestPath.equals("/login")) {
             filterChain.doFilter(request, response);
             return;
@@ -48,6 +50,7 @@ public class JWTFilter extends OncePerRequestFilter {
         }
 
         String token = authorization.split(" ")[1];
+
 
         //토큰 소멸 시간 검증
         if (jwtUtil.isExpired(token)) {

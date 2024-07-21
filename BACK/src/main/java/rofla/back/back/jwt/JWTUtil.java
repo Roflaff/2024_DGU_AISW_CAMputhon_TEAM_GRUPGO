@@ -16,7 +16,6 @@ public class JWTUtil {
     private SecretKey secretKey;
 
     public JWTUtil(@Value("${spring.jwt.secret}")String secret) {
-
         this.secretKey = new SecretKeySpec(secret.getBytes(StandardCharsets.UTF_8), Jwts.SIG.HS256.key().build().getAlgorithm());
     }
 
@@ -36,15 +35,15 @@ public class JWTUtil {
         return Jwts.parser().verifyWith(secretKey).build().parseSignedClaims(token).getPayload().getExpiration().before(new Date());
     }
 
-    // HttpServletRequest request 에서 토큰 파싱 함수
-    public String getToken(HttpServletRequest request) {
-        String authorization= request.getHeader("Authorization");
-        String token = authorization.split(" ")[1];
-        return token;
-    }
-
+//    // HttpServletRequest request 에서 토큰 파싱 함수
+//    public String getToken(HttpServletRequest request) {
+//        String authorization= request.getHeader("Authorization");
+//        String token = authorization.split(" ")[1];
+//        return token;
+//    }
 
     public String createJwt(String username, String role, Long expiredMs) {
+
         return Jwts.builder()
                 .claim("username", username)
                 .claim("role", role)

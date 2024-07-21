@@ -17,9 +17,6 @@ public class CustomUserDetails implements UserDetails {
         this.userEntity = userEntity;
     }
 
-    public CustomUserDetails(Optional<User> users) {
-        this.userEntity = users.get();
-    }
 
 
     @Override
