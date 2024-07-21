@@ -12,12 +12,12 @@ import java.util.Optional;
 public class UserService {
     private final UserRepository userRepository;
 
+
     // 회원가입
     public void saveUser(User users) {
         if (userRepository.findByUsername(users.getUsername()).isPresent()) {
             throw new IllegalArgumentException("동일한 아이디가 있는 유저가 존재 합니다.");
         }
-        userRepository.save(users);
     }
 
     //조회
