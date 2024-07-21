@@ -25,4 +25,6 @@ public class Food {
     @Column(name = "waiting")
     private Integer waiting;
 
+    @Column(name = "food_info")
+    private String foodInfo;
 }
