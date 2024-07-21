@@ -45,4 +45,6 @@ public class SubjectService {
             System.out.println("not Present in DB!");
         }
     }
+
+    public void find
 }

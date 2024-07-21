@@ -1,5 +1,6 @@
 package rofla.back.back.service;
 
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -12,6 +13,7 @@ import rofla.back.back.model.Subject;
 import rofla.back.back.model.SubjectInfo;
 import rofla.back.back.repository.SubjectInfoRepository;
 import rofla.back.back.repository.SubjectRepository;
+import rofla.back.back.repository.UserRepository;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -22,6 +24,7 @@ import java.util.regex.Pattern;
 @RequiredArgsConstructor
 @Service
 public class ExcelService {
+    private final UserRepository userRepository;
     private final SubjectInfoRepository subjectInfoRepository;
     private final SubjectRepository subjectRepository;
 
@@ -76,7 +79,7 @@ public class ExcelService {
             throw e;
         }
     }
-    public void readSubjectExcelFile(MultipartFile file) throws Exception{
+    public void readSubjectExcelFile(MultipartFile file,String username) throws Exception{
         if (file.isEmpty()) {
             throw new IllegalArgumentException("Uploaded file is empty");
         }
@@ -87,41 +90,19 @@ public class ExcelService {
                     continue;
                 }
                 Subject subject = new Subject();
+                subject.setUsername(userRepository.findByUsername(username).orElseThrow(()->new EntityNotFoundException("username is not found")));
                 for (Cell cell : row) {
                     // 엑셀 열을 기준으로 집어넣을 항목
                     switch (cell.getColumnIndex()) {
                         case 0:
                             break;
                         case 4:
-                            subject.set;
-                            break;
-                        case 5:
-                            //
-                            subject.setName(cell.toString());
-                            break;
-                        case 6:
-                            //
-                            subjectInfo.setProfessor(cell.toString());
-                            break;
-                        case 8:
-                            String input = cell.toString();
-                            String[] parts = input.split(",");
-                            StringBuilder startTime = new StringBuilder();
-                            StringBuilder endTime = new StringBuilder();
-                            // 각 부분에서 요일과 시간을 추출
-                            for (String part : parts) {
-                                extractTimes(part,startTime,endTime);
-                            }
-                            subjectInfo.setStartTime(startTime.toString());
-                            subjectInfo.setEndTime(endTime.toString());
-                            break;
-                        case 9:
-                            // 과목명
-                            subjectInfo.setClassroom(cell.toString());
+                            subject.setSubjectNum(subjectInfoRepository.findBySubjectNum(cell.toString()).orElseThrow(
+                                    ()->new EntityNotFoundException("subjectNum is not found")));
                             break;
                     }
                 }
-                subjectInfoRepository.save(subjectInfo);
+                subjectRepository.save(subject);
             }
         } catch(Exception e){
             throw e;
