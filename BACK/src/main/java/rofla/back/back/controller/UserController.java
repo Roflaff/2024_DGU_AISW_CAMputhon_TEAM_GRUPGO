@@ -3,7 +3,7 @@ package rofla.back.back.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import rofla.back.back.model.Food;
+import rofla.back.back.dto.loginRequest;
 import rofla.back.back.model.User;
 import rofla.back.back.service.UserService;
 
@@ -23,6 +23,16 @@ public class UserController {
         try {
             userService.saveUser(users);
             return ResponseEntity.ok("회원가입 성공!");
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(409).body(e.getMessage());
+        }
+    }
+
+    @GetMapping("/login")
+    public ResponseEntity<String> loginUser(@RequestBody loginRequest loginRequest) {
+        try {
+            userService.searchUserByUsername(loginRequest.getUsername());
+            return ResponseEntity.ok("login!");
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(409).body(e.getMessage());
         }
