@@ -3,13 +3,13 @@ package rofla.back.back.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import rofla.back.back.jwt.JWTUtil;
 import rofla.back.back.model.User;
 import rofla.back.back.service.UserService;
+
+import java.io.IOException;
 
 @RestController
 @RequiredArgsConstructor
@@ -28,5 +28,12 @@ public class UserController {
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(409).body(e.getMessage());
         }
+    }
+    @PostMapping("/upload/excels")
+    public ResponseEntity<?> readSubjectExcelFile(@RequestParam("file")MultipartFile file) throws IOException{
+        if(file.isEmpty()){
+            throw new IllegalArgumentException("Uploaded file is empty");
+        }
+        Subject
     }
 }
