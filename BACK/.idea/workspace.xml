@@ -4,7 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62fb54ec-fc80-4c6f-8f68-3ad87f48b226" name="Changes" comment="삭제된 파일 확인" />
+    <list default="true" id="62fb54ec-fc80-4c6f-8f68-3ad87f48b226" name="Changes" comment="삭제된 파일 확인">
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1a070716-6454-45f7-a1a4-871e75002722.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1a070716-6454-45f7-a1a4-871e75002722.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/back.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/back.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/rofla/back/back/BackApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/rofla/back/back/BackApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/rofla/back/back/controller/BcdController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/rofla/back/back/controller/BcdController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/rofla/back/back/controller/ExcelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/rofla/back/back/controller/ExcelController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/rofla/back/back/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/rofla/back/back/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/rofla/back/back/model/Behavior.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/rofla/back/back/model/Behavior.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/rofla/back/back/model/SubjectInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/rofla/back/back/model/SubjectInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/rofla/back/back/repository/BehaviorRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/rofla/back/back/repository/BehaviorRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/rofla/back/back/repository/DiaryRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/rofla/back/back/repository/DiaryRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/rofla/back/back/repository/FoodRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/rofla/back/back/repository/FoodRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/rofla/back/back/repository/OrderedFoodRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/rofla/back/back/repository/OrderedFoodRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/rofla/back/back/service/ExcelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/rofla/back/back/service/ExcelService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/rofla/back/back/service/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/rofla/back/back/service/OrderService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/rofla/back/back/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/rofla/back/back/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rofla/back/back/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rofla/back/back/service/UserService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -149,7 +180,7 @@
       <option name="presentableId" value="Default" />
       <updated>1721568224847</updated>
       <workItem from="1721568226102" duration="13847000" />
-      <workItem from="1721588269573" duration="149000" />
+      <workItem from="1721588269573" duration="1045000" />
     </task>
     <task id="LOCAL-00001" summary="ksp">
       <option name="closed" value="true" />
@@ -279,7 +310,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721588337679</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="삭제된 파일 확인">
+      <option name="closed" value="true" />
+      <created>1721588484061</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1721588484061</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
