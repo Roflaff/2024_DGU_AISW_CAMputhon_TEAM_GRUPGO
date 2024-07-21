@@ -32,10 +32,19 @@ import java.util.regex.Pattern;
 public class ExcelController {
     private final ExcelService excelService;
     @PostMapping("/subjectInfo")
+    public ResponseEntity<?> readSubjectInfoExcelFile(@RequestParam("file") MultipartFile file){
+        try {
+            excelService.readSubjectInfoExcelFile(file);
+            return ResponseEntity.ok("read SubjectInfo Excel file complete");
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+    @PostMapping("/subject")
     public ResponseEntity<?> readSubjectExcelFile(@RequestParam("file") MultipartFile file){
         try {
             excelService.readSubjectExcelFile(file);
-            return ResponseEntity.ok("read SubjectInfo Excel file complete");
+            return ResponseEntity.ok("read Subject Excel file complete");
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
