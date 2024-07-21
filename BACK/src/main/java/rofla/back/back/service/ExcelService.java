@@ -54,14 +54,14 @@ public class ExcelService {
                         case 8:
                             String input = cell.toString();
                             String[] parts = input.split(",");
-                            String startTime ="";
-                            String endTime ="";
+                            StringBuilder startTime = new StringBuilder();
+                            StringBuilder endTime = new StringBuilder();
                             // 각 부분에서 요일과 시간을 추출
                             for (String part : parts) {
                                 extractTimes(part,startTime,endTime);
                             }
-                            subjectInfo.setStartTime(startTime);
-                            subjectInfo.setEndTime(endTime);
+                            subjectInfo.setStartTime(startTime.toString());
+                            subjectInfo.setEndTime(endTime.toString());
                             break;
                         case 9:
                             // 과목명
@@ -75,17 +75,17 @@ public class ExcelService {
             throw e;
         }
     }
-    public void extractTimes(String input, String startTime, String endTime){
+    public void extractTimes(String input, StringBuilder startTime, StringBuilder endTime){
         Pattern pattern = Pattern.compile("(\\D+)(\\d+(?:\\.\\d+)?-\\d+(?:\\.\\d+)?)/(\\d{1,2}:\\d{2})-(\\d{1,2}:\\d{2})");
         Matcher matcher = pattern.matcher(input);
-        if(startTime != ""){
-            startTime += ",";
-            endTime += ",";
+        if(!startTime.isEmpty()){
+            startTime.append(",");
+            endTime.append(",");
         }
         if (matcher.find()) {
             String day = matcher.group(1); // 요일
-            startTime += day + matcher.group(3); // 시작 시간2
-            endTime += day + matcher.group(4); // 마감 시간2
+            startTime.append(day).append(matcher.group(3)); // 시작 시간2
+            endTime.append(day).append(matcher.group(4)); // 마감 시간2
         }
     }
 }
