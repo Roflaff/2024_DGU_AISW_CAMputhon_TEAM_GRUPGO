@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import rofla.back.back.jwt.JWTUtil;
+import rofla.back.back.model.User;
 import rofla.back.back.service.UserService;
 
 import java.io.IOException;

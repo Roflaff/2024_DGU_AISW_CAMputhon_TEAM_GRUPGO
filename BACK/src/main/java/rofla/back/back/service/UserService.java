@@ -3,7 +3,10 @@ package rofla.back.back.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import rofla.back.back.model.User;
 import rofla.back.back.repository.UserRepository;
+
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -22,5 +25,13 @@ public class UserService {
         userRepository.save(users);
     }
 
+    //조회
+    public Optional<TableName> searchTestByCol2Name(String c) {
+        return testRepository.findByC(c);
+    }
+
+    //수정
+
+    //삭제
 
 }
