@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JpaBuddyIdeaProjectConfig">
-    <option name="reLastEntityCreationPackage" value="src/main/java/rofla/back/back" />
+    <option name="defaultUnitInitialized" value="true" />
+    <option name="reLastEntityCreationPackage" value="src/main/java/rofla/back/back/model" />
+    <option name="renamerInitialized" value="true" />
     <option name="reverseEngineeringLastDbConnectionId" value="1a070716-6454-45f7-a1a4-871e75002722__grupgo" />
   </component>
 </project>
