@@ -24,11 +24,10 @@ public class ExcelService {
     private final SubjectInfoRepository subjectInfoRepository;
     private final SubjectRepository subjectRepository;
 
-    public boolean readSubjectExcelFile(MultipartFile file) throws IOException {
+    public void readSubjectExcelFile(MultipartFile file) throws Exception{
         if (file.isEmpty()) {
             throw new IllegalArgumentException("Uploaded file is empty");
         }
-        List<SubjectInfo> subjectInfoList = new ArrayList<>();
         try (Workbook workbook = new XSSFWorkbook(file.getInputStream())) {
             Sheet sheet = workbook.getSheetAt(0);
             for (Row row : sheet) {
@@ -48,6 +47,10 @@ public class ExcelService {
                             //
                             subjectInfo.setName(cell.toString());
                             break;
+                        case 6:
+                            //
+                            subjectInfo.setProfessor(cell.toString());
+                            break;
                         case 8:
                             String input = cell.toString();
                             String[] parts = input.split(",");
@@ -62,25 +65,14 @@ public class ExcelService {
                             break;
                         case 9:
                             // 과목명
-                            subject.setSubjectName(cell.toString());
-                            break;
-                        case 8:
-                            break;
-                        case 9:
-                            // 학점
-                            subject.setGrade(Integer.parseInt(cell.toString()));
+                            subjectInfo.setClassroom(cell.toString());
                             break;
                     }
                 }
-                subjects.add(subject);
+                subjectInfoRepository.save(subjectInfo);
             }
-        }
-        for (Subject subject : subjects) {
-            try {
-                subjectService.saveSubject(subject);
-            } catch (IllegalArgumentException e) {
-                return ResponseEntity.status(409).body(e.getMessage());
-            }
+        } catch(Exception e){
+            throw e;
         }
     }
     public void extractTimes(String input, String startTime, String endTime){
