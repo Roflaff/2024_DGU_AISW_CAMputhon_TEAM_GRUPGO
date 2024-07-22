@@ -3,9 +3,11 @@ package rofla.back.back.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import rofla.back.back.model.Behavior;
+import rofla.back.back.model.Food;
 import rofla.back.back.model.Order;
 import rofla.back.back.repository.BehaviorRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -27,6 +29,12 @@ public class BehaviorService {
             return behaviorRepository.findByUsername(username);
         }
 
+        //모두 조회
+        public List<Behavior> getAllBehavior() {
+            return behaviorRepository.findAll();
+        }
+
+
         //수정
         public Optional<Behavior> modifyBehavior(Behavior newbehavior) {
             return behaviorRepository.findByUsername(newbehavior.getUsername())
@@ -44,9 +52,9 @@ public class BehaviorService {
 
 
         //삭제
-        public void deleteBehavior(Behavior behavior) {
-            if(behaviorRepository.findByUsername(behavior.getUsername()).isPresent()) {
-                behaviorRepository.delete(behaviorRepository.findByUsername(behavior.getUsername()).get());
+        public void deleteBehavior(String username) {
+            if(behaviorRepository.findByUsername(username).isPresent()) {
+                behaviorRepository.delete(behaviorRepository.findByUsername(username).get());
             }
             else {
                 System.out.println("not Present in DB!");

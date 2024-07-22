@@ -25,7 +25,7 @@ public class BcdController {
         // QR 정보
         int width = 200;
         int height = 200;
-        String url = "https://lucas-owner.tistory.com/";
+        String url = "GRUPGO29847.com/";
 
         // QR Code - BitMatrix: qr code 정보 생성
         BitMatrix encode = new MultiFormatWriter()

@@ -1,0 +1,64 @@
+Index: src/main/java/rofla/back/back/filter/JWTFilter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package rofla.back.back.filter;\n\nimport jakarta.servlet.FilterChain;\nimport jakarta.servlet.ServletException;\nimport jakarta.servlet.http.HttpServletRequest;\nimport jakarta.servlet.http.HttpServletResponse;\nimport org.springframework.security.authentication.UsernamePasswordAuthenticationToken;\nimport org.springframework.security.core.Authentication;\nimport org.springframework.security.core.context.SecurityContextHolder;\nimport org.springframework.web.filter.OncePerRequestFilter;\nimport rofla.back.back.jwt.CustomUserDetails;\nimport rofla.back.back.jwt.JWTUtil;\n\nimport java.io.IOException;\n\npublic class JWTFilter extends OncePerRequestFilter {\n\n    private final JWTUtil jwtUtil;\n\n    public JWTFilter(JWTUtil jwtUtil) {\n\n        this.jwtUtil = jwtUtil;\n    }\n\n\n    @Override\n    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {\n\n        //request에서 Authorization 헤더를 찾음\n        String authorization= request.getHeader(\"Authorization\");\n\n        // /login 경로에 대해서는 JWT 검증을 하지 않음\n        String requestPath = request.getRequestURI();\n        if (requestPath.equals(\"/login\")) {\n            filterChain.doFilter(request, response);\n            return;\n        }\n\n        //Authorization 헤더 검증\n        if (authorization == null || !authorization.startsWith(\"Bearer \")) {\n\n            System.out.println(\"token null\");\n            filterChain.doFilter(request, response);\n\n            //조건이 해당되면 메소드 종료 (필수)\n            return;\n        }\n\n        String token = authorization.split(\" \")[1];\n\n        //토큰 소멸 시간 검증\n        if (jwtUtil.isExpired(token)) {\n\n            System.out.println(\"token expired\");\n            filterChain.doFilter(request, response);\n\n            //조건이 해당되면 메소드 종료 (필수)\n            return;\n        }\n\n\n        String username = jwtUtil.getUsername(token);\n        String role = jwtUtil.getRole(token);\n\n        User userEntity = new User();\n        userEntity.setUsername(username);\n        userEntity.setPassword(\"temppassword\");\n        userEntity.setRole(role);\n\n        CustomUserDetails customUserDetails = new CustomUserDetails(userEntity);\n\n        Authentication authToken = new UsernamePasswordAuthenticationToken(customUserDetails, null, customUserDetails.getAuthorities());\n\n        SecurityContextHolder.getContext().setAuthentication(authToken);\n\n        filterChain.doFilter(request, response);\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/rofla/back/back/filter/JWTFilter.java b/src/main/java/rofla/back/back/filter/JWTFilter.java
+--- a/src/main/java/rofla/back/back/filter/JWTFilter.java	(revision 3ac81e28ae8f3181f949290bc26f8fd87e0dc0a7)
++++ b/src/main/java/rofla/back/back/filter/JWTFilter.java	(date 1721568856361)
+@@ -10,6 +10,7 @@
+ import org.springframework.web.filter.OncePerRequestFilter;
+ import rofla.back.back.jwt.CustomUserDetails;
+ import rofla.back.back.jwt.JWTUtil;
++import rofla.back.back.model.User;
+ 
+ import java.io.IOException;
+ 
+Index: .idea/dataSources.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/dataSources.xml b/.idea/dataSources.xml
+new file mode 100644
+--- /dev/null	(date 1721568957046)
++++ b/.idea/dataSources.xml	(date 1721568957046)
+@@ -0,0 +1,17 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
++    <data-source source="LOCAL" name="@grupgo.crsw2yc4wwwt.ap-northeast-2.rds.amazonaws.com" uuid="8d4a0a93-a0d0-451a-ba68-fe096f54cd2d">
++      <driver-ref>mysql.8</driver-ref>
++      <synchronize>true</synchronize>
++      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
++      <jdbc-url>jdbc:mysql://grupgo.crsw2yc4wwwt.ap-northeast-2.rds.amazonaws.com:3306</jdbc-url>
++      <jdbc-additional-properties>
++        <property name="com.intellij.clouds.kubernetes.db.host.port" />
++        <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
++        <property name="com.intellij.clouds.kubernetes.db.container.port" />
++      </jdbc-additional-properties>
++      <working-dir>$ProjectFileDir$</working-dir>
++    </data-source>
++  </component>
++</project>
+\ No newline at end of file
+Index: src/main/java/rofla/back/back/jwt/CustomUserDetails.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package rofla.back.back.jwt;\n\nimport org.springframework.security.core.GrantedAuthority;\nimport org.springframework.security.core.userdetails.UserDetails;\n\nimport java.util.ArrayList;\nimport java.util.Collection;\nimport java.util.Optional;\n\npublic class CustomUserDetails implements UserDetails {\n\n    private final User userEntity;\n\n    public CustomUserDetails(User userEntity) {\n\n        this.userEntity = userEntity;\n    }\n\n    public CustomUserDetails(Optional<User> users) {\n        this.userEntity = users.get();\n    }\n\n\n    @Override\n    public Collection<? extends GrantedAuthority> getAuthorities() {\n\n        Collection<GrantedAuthority> collection = new ArrayList<>();\n\n        collection.add(new GrantedAuthority() {\n\n            @Override\n            public String getAuthority() {\n                return userEntity.getRole();\n            }\n        });\n\n        return collection;\n    }\n\n    @Override\n    public String getPassword() {\n        return userEntity.getPassword();\n    }\n\n    @Override\n    public String getUsername() {\n\n        return userEntity.getUsername();\n    }\n\n    @Override\n    public boolean isAccountNonExpired() {\n\n        return true;\n    }\n\n    @Override\n    public boolean isAccountNonLocked() {\n\n        return true;\n    }\n\n    @Override\n    public boolean isCredentialsNonExpired() {\n\n        return true;\n    }\n\n    @Override\n    public boolean isEnabled() {\n\n        return true;\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/rofla/back/back/jwt/CustomUserDetails.java b/src/main/java/rofla/back/back/jwt/CustomUserDetails.java
+--- a/src/main/java/rofla/back/back/jwt/CustomUserDetails.java	(revision 3ac81e28ae8f3181f949290bc26f8fd87e0dc0a7)
++++ b/src/main/java/rofla/back/back/jwt/CustomUserDetails.java	(date 1721568779502)
+@@ -2,6 +2,7 @@
+ 
+ import org.springframework.security.core.GrantedAuthority;
+ import org.springframework.security.core.userdetails.UserDetails;
++import rofla.back.back.model.User;
+ 
+ import java.util.ArrayList;
+ import java.util.Collection;

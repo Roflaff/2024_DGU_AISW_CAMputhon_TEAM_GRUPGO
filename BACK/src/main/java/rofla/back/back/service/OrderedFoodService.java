@@ -4,9 +4,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import rofla.back.back.model.Order;
 import rofla.back.back.model.OrderedFood;
+import rofla.back.back.model.Subject;
 import rofla.back.back.repository.OrderRepository;
 import rofla.back.back.repository.OrderedFoodRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -29,6 +31,11 @@ public class OrderedFoodService {
         return orderedFoodRepository.findByOrderId(orderId);
     }
 
+    //모두 조회
+    public List<OrderedFood> getAllOrderedFood() {
+        return orderedFoodRepository.findAll();
+    }
+
     //수정
     public Optional<OrderedFood> modifyOrderedFood(OrderedFood newOrderedFood) {
         return orderedFoodRepository.findByOrderId(newOrderedFood.getOrderId())
@@ -43,7 +50,7 @@ public class OrderedFoodService {
 
 
     //삭제
-    public void deleteOrder(Integer orderId) {
+    public void deleteOrderedFood(Integer orderId) {
         if(orderedFoodRepository.findByOrderId(orderId).isPresent()) {
             orderedFoodRepository.delete(orderedFoodRepository.findByOrderId(orderId).get());
         }
