@@ -1,0 +1,79 @@
+Index: src/main/java/rofla/back/back/service/UserService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package rofla.back.back.service;\r\n\r\nimport lombok.RequiredArgsConstructor;\r\nimport org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;\r\nimport org.springframework.stereotype.Service;\r\nimport rofla.back.back.model.User;\r\nimport rofla.back.back.repository.UserRepository;\r\n\r\nimport java.util.Optional;\r\n\r\n@Service\r\n@RequiredArgsConstructor\r\npublic class UserService {\r\n    private final UserRepository userRepository;\r\n    private final BCryptPasswordEncoder bCryptPasswordEncoder;\r\n\r\n    // 회원가입\r\n    public void saveUser(User users) {\r\n        if (userRepository.findByUsername(users.getUsername()).isPresent()) {\r\n            throw new IllegalArgumentException(\"동일한 아이디가 있는 유저가 존재 합니다.\");\r\n        }\r\n        // 암호화 후 저장\r\n        String password =  users.getPassword();\r\n        users.setPassword(bCryptPasswordEncoder.encode(password));\r\n        userRepository.save(users);\r\n    }\r\n\r\n    //조회\r\n    public Optional<User> searchUserByUsername(String username) {\r\n        return userRepository.findByUsername(username);\r\n    }\r\n\r\n    //수정\r\n    public Optional<User> modifyUser(User newUser) {\r\n        return userRepository.findByUsername(newUser.getUsername())\r\n                .map(User -> {\r\n                    User.setId(newUser.getId());\r\n                    User.setName(newUser.getName());\r\n                    User.setUsername(newUser.getUsername());\r\n                    User.setPassword(newUser.getPassword());\r\n                    User.setPhoneNum(newUser.getPhoneNum());\r\n                    User.setMajor(newUser.getMajor());\r\n                    User.setRole(newUser.getRole());\r\n                    return userRepository.save(User);\r\n                });\r\n    }\r\n\r\n\r\n    //삭제\r\n    public void deleteUser(String username) {\r\n        if(userRepository.findByUsername(username).isPresent()) {\r\n            userRepository.delete(userRepository.findByUsername(username).get());\r\n        }\r\n        else {\r\n            System.out.println(\"not Present in DB!\");\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/rofla/back/back/service/UserService.java b/src/main/java/rofla/back/back/service/UserService.java
+--- a/src/main/java/rofla/back/back/service/UserService.java	(revision ada1c10799ef97af3603befd20309e328b6d1a51)
++++ b/src/main/java/rofla/back/back/service/UserService.java	(date 1721593887466)
+@@ -1,7 +1,6 @@
+ package rofla.back.back.service;
+ 
+ import lombok.RequiredArgsConstructor;
+-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+ import org.springframework.stereotype.Service;
+ import rofla.back.back.model.User;
+ import rofla.back.back.repository.UserRepository;
+@@ -12,16 +11,12 @@
+ @RequiredArgsConstructor
+ public class UserService {
+     private final UserRepository userRepository;
+-    private final BCryptPasswordEncoder bCryptPasswordEncoder;
+ 
+     // 회원가입
+     public void saveUser(User users) {
+         if (userRepository.findByUsername(users.getUsername()).isPresent()) {
+             throw new IllegalArgumentException("동일한 아이디가 있는 유저가 존재 합니다.");
+         }
+-        // 암호화 후 저장
+-        String password =  users.getPassword();
+-        users.setPassword(bCryptPasswordEncoder.encode(password));
+         userRepository.save(users);
+     }
+ 
+Index: src/main/java/rofla/back/back/service/SubjectService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package rofla.back.back.service;\r\n\r\n\r\nimport lombok.RequiredArgsConstructor;\r\nimport org.springframework.stereotype.Service;\r\nimport rofla.back.back.model.Subject;\r\nimport rofla.back.back.model.SubjectInfo;\r\nimport rofla.back.back.model.User;\r\nimport rofla.back.back.repository.SubjectInfoRepository;\r\nimport rofla.back.back.repository.SubjectRepository;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\nimport java.util.Optional;\r\n\r\n@Service\r\n@RequiredArgsConstructor\r\npublic class SubjectService {\r\n    private final SubjectRepository subjectRepository;\r\n    private final SubjectInfoRepository subjectInfoRepository;\r\n\r\n    // 수업 생성\r\n    public void saveSubject(Subject subject) {\r\n        if (subjectRepository.findBySubjectNumAndUsername(subject.getSubjectNum(), subject.getUsername()).isPresent()) {\r\n            throw new IllegalArgumentException(\"동일한 수업이 존재 합니다.\");\r\n        }\r\n    }\r\n\r\n    //조회\r\n    public Optional<Subject> searchSubjectBySubjectNumAndUsername(Subject subject) {\r\n        return subjectRepository.findBySubjectNumAndUsername(subject.getSubjectNum(), subject.getUsername());\r\n    }\r\n\r\n    //수정\r\n    public Optional<Subject> modifySubject(Subject newSubject) {\r\n        return subjectRepository.findBySubjectNumAndUsername(newSubject.getSubjectNum(), newSubject.getUsername())\r\n                .map(Subject -> {\r\n                    Subject.setUsername(newSubject.getUsername());\r\n                    Subject.setSubjectNum(newSubject.getSubjectNum());\r\n                    return subjectRepository.save(Subject);\r\n                });\r\n    }\r\n\r\n    public void deleteSubject(Subject subject) {\r\n        if(subjectRepository.findBySubjectNumAndUsername(subject.getSubjectNum(), subject.getUsername()).isPresent()) {\r\n            subjectRepository.delete(subjectRepository.findBySubjectNumAndUsername(subject.getSubjectNum(), subject.getUsername()).get());\r\n        }\r\n        else {\r\n            System.out.println(\"not Present in DB!\");\r\n        }\r\n    }\r\n\r\n    public void findEmptyTime(User user){\r\n        List<Subject> subjectList = subjectRepository.findAllByUsername(user);\r\n        List<SubjectInfo> subjectInfoList = new ArrayList<>();\r\n        for(Subject subject: subjectList){\r\n            subjectInfoList.add(subject.getSubjectNum());\r\n        }\r\n        for(int i=0;i<subjectInfoList.size()-1;i++){\r\n            for(int j=0;j<subjectInfoList.size()-i-1;j++){\r\n                if(Integer.parseInt(subjectInfoList.get(j).getStartTime()) > Integer.parseInt(subjectInfoList.get(j+1).getStartTime())){\r\n\r\n                }\r\n            }\r\n        }\r\n        //subjectInfoRepository.findBySubjectNum()\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/rofla/back/back/service/SubjectService.java b/src/main/java/rofla/back/back/service/SubjectService.java
+--- a/src/main/java/rofla/back/back/service/SubjectService.java	(revision ada1c10799ef97af3603befd20309e328b6d1a51)
++++ b/src/main/java/rofla/back/back/service/SubjectService.java	(date 1721593887458)
+@@ -10,6 +10,7 @@
+ import rofla.back.back.repository.SubjectRepository;
+ 
+ import java.util.ArrayList;
++import java.util.Comparator;
+ import java.util.List;
+ import java.util.Optional;
+ 
+@@ -50,18 +51,18 @@
+         }
+     }
+ 
+-    public void findEmptyTime(User user){
++    public void findEmptyTime(User user) {
+         List<Subject> subjectList = subjectRepository.findAllByUsername(user);
+         List<SubjectInfo> subjectInfoList = new ArrayList<>();
+-        for(Subject subject: subjectList){
++        for (Subject subject : subjectList) {
+             subjectInfoList.add(subject.getSubjectNum());
+         }
+-        for(int i=0;i<subjectInfoList.size()-1;i++){
+-            for(int j=0;j<subjectInfoList.size()-i-1;j++){
+-                if(Integer.parseInt(subjectInfoList.get(j).getStartTime()) > Integer.parseInt(subjectInfoList.get(j+1).getStartTime())){
++        subjectInfoList.sort(Comparator.comparingDouble(subjectInfo -> Double.parseDouble(subjectInfo.getStartTime())));
++        int index = 0;
++        while (true) {
++            double startDay = (int) (Double.parseDouble(subjectInfoList.get(index).getStartTime()) % 10);
+ 
+-                }
+-            }
++
+         }
+         //subjectInfoRepository.findBySubjectNum()
+     }
