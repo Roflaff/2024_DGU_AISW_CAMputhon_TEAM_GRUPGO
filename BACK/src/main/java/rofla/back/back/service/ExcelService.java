@@ -96,7 +96,7 @@ public class ExcelService {
                     switch (cell.getColumnIndex()) {
                         case 0:
                             break;
-                        case 4:
+                        case 3:
                             subject.setSubjectNum(subjectInfoRepository.findBySubjectNum(cell.toString()).orElseThrow(
                                     ()->new EntityNotFoundException("subjectNum is not found")));
                             break;
