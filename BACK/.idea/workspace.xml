@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="601e404f-a46a-49d5-95ff-a4ce0aea31f9" name="Changes" comment="?">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1a070716-6454-45f7-a1a4-871e75002722.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1a070716-6454-45f7-a1a4-871e75002722.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rofla/back/back/model/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rofla/back/back/model/Food.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,6 +146,7 @@
       <workItem from="1721561603840" duration="15729000" />
       <workItem from="1721578478866" duration="11626000" />
       <workItem from="1721593161567" duration="1907000" />
+      <workItem from="1721604373809" duration="1785000" />
     </task>
     <task id="LOCAL-00003" summary="subject_info에 교수컬럼추가.&#10;레포다만듦">
       <option name="closed" value="true" />
@@ -263,6 +267,26 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/back" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="main" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">

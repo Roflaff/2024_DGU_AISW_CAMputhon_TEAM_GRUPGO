@@ -25,4 +25,7 @@ public class Food {
 
     @Column(name = "food_info")
     private String foodInfo;
+
+    @Column(name = "cost")
+    private Integer cost;
 }
