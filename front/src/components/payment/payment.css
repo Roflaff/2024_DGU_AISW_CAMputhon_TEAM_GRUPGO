@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@600&display=swap");
+
+.payment-page {
+  width: 100%;
+  height: 100%;
+  font-family: 'Noto Sans KR', sans-serif;
+  padding: 20px;
+  background-color: #e6e6fa;
+}
+
+.payment-page h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.payment-page .content {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.payment-page .p {
+  color:#919191
+}
+
+
+.payment-page .left-column {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.payment-page .right-column {
+  width: 45%;
+}
+
+.payment-page .order-info,
+.payment-page .payment-method,
+.payment-page .total-summary {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.payment-page .order-info {
+  height: auto;
+}
+
+.payment-page .total-summary {
+  width: auto;
+}
+
+.payment-page h2 {
+  margin-bottom: 10px;
+}
+
+.payment-page p {
+  margin: 5px 0;
+}
+
+.payment-page button {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.payment-page button:hover {
+  background-color: #45a049;
+}
+
+.payment-page .summary-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.payment-select {
+  width: 40px;
+}
+
+.payment-text-input {
+  width: 50%;
+  height: 30px;
+}
+
+.payment-division {
+  width: 100%;
+  justify-content: center;
+}
+
+.payment-div-div {
+  width: 100px;
+}
+
+.payment-page .summary-item img {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+.payment-page label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.payment-page input[type="radio"],
+.payment-page input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.payment-page select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.payment-page .final-payment {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex; /* 추가된 부분 */
+  justify-content: space-between; /* 추가된 부분 */
+}
+
+.payment-page .final-payment-left {
+  width:30%;
+  margin:10px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #eeeeee;
+}
+
+.payment-page .final-payment-right {
+  flex: 1;
+  margin:10px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #eeeeee;
+}
+
+.payment-page .final-payment-right label {
+  margin-bottom: 10px;
+}
+
+.payment-page .final-payment-right button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ffcc00;
+  border: none;
+  border-radius: 5px;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.payment-page .final-payment p {
+  display: flex;
+  justify-content: space-between;
+}
+
+.payment-page .final-payment span {
+  color: #0000ff;
+}

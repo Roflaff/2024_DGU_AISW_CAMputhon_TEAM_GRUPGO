@@ -1,38 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@600&display=swap");
+
 #func1-page {
-  height: 100vh;
+  height: 100%;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
+  flex-direction: column; /* 세로 정렬을 위한 속성 추가 */
   background-color: #3C3A76;
   padding: 20px;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
+  color:white;
   z-index: 2;
 }
 
-.left-side {
+.container {
   font-family: Noto Sans KR;
   flex: 1;
-  width:30%;
-  height:80%;
+  width: 10%;
+  height: 30%;
   background-color: aliceblue;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding:20px;
+  padding: 20px;
   margin: 20px;
   border-radius: 20px;
-}
-
-.right-side {
-  margin:40px;
-  width: 50%;
-  height:80%;
-  flex: 1;
-  padding: 20px;
 }
 
 #func1-page h1 {
@@ -56,4 +50,62 @@
 
 .earth-image:hover {
   transform: translate(50%, 50%) scale(5.3); /* 마우스를 올렸을 때 이미지가 커짐 */
+}
+
+.image {
+  isolation: isolate;
+  right: -800px;
+  width: 80%;
+  padding: 100px;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  animation: float 3s ease-in-out infinite; /* 애니메이션 추가 */
+  transform: scale(0.4);
+}
+
+.image-stopped {
+  isolation: isolate;
+  width: 80%;
+  top: -500px;
+  padding: 20;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-container {
+  padding: 20px;
+  display: flex;
+  justify-content: left;
+  gap: 10px; /* 버튼 사이 간격 조정 */
+}
+
+.button-button {
+  position: absolute;
+  bottom:200px;
+  padding: 10px;
+  background-color: #5d53eb;
+  color: azure;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transform: scale(1.5);
+}
+
+.button-button:hover {
+  background-color: #4d44cf;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(1deg);
+  }
 }

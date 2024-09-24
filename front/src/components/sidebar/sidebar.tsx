@@ -13,9 +13,18 @@ const SideBar: React.FC<SideBarProps> = ({ open, onClose }) => {
             <button className="close-button" onClick={onClose}>&#9776;</button>
         </div>
         <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
+          <li>Account</li>
+          <ul>
+              <li>Edit Infomation</li>
+              <li>Delete Account</li>
+              <li>Setting</li>
+          </ul>
+
+          <li>My Schedule</li>
+          <ul>
+            <li>Weekly Schedule</li>
+            <li>Edit Schedule</li>
+          </ul>
         </ul>
     </div>
   );

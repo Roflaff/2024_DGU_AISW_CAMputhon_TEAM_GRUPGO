@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap");
+.line-graph {
+    position: relative;
+    width: 80%;
+    height: 200px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .line-graph-slot {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .line-graph-slot-bg {
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .lecture-time {
+    height: 10px;
+    background-color: #afafaf;
+    color: white;
+  }
+  
+  .free-time {
+    height: 10px;
+    background-color: #AAD6FF;
+    color: black;
+  }
+  
+  .line-graph-time {
+    right:-60px;
+    width:70px;
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    top: -30px; /* 원 위에 시간 표시 */
+    transform: translateX(-50%);
+  }
+  
+  .line-graph-label {
+    width:150px;
+    left:10px;
+    font-size: 15px;
+    font-family: 'Poppins 600';
+    margin-top: 3px;
+    position: absolute;
+    bottom: -5px; /* 원 아래에 강의 내용 표시 */
+    transform: translateX(-50%);
+  }
+  
+  .line-graph-circle {
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: 15px solid #4caf50;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+  }
+  
+  .inner-circle {
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    border-radius: 50%;
+  }
+  
+  .line-graph-line {
+    position: absolute;
+    height: 2px;
+    background-color: #ddd;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .free-time-line {
+    background-color: #4caf50;
+  }
+  

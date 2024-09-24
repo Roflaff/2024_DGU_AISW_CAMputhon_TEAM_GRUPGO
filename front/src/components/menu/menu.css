@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
+
+.menu-body {
+  margin: 0;
+  font-family: 'Noto Sans', sans-serif;
+  background-color: #333;
+  color: #fff;
+  height:200vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.menu-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.menu-container {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(230, 230, 250, 0.99);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  width: 70%;
+  margin-bottom: 20px;
+}
+
+.menu-container h1 {
+  margin-bottom: 20px;
+}
+
+.ramen-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.ramen-card {
+  background-color: #fff;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ramen-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.ramen-card h2 {
+  margin: 10px 0;
+}
+
+.ramen-card p {
+  margin: 10px 0;
+  color: #666;
+  flex-grow: 1;
+}
+
+.price {
+  background-color: #ffcc00;
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.cart-container {
+  background-color: #fff;
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 20px;
+}

@@ -5,7 +5,6 @@ import Home from '../home/home';
 import Func1 from '../func1/func1';
 import Func2 from '../func2/func2';
 import TeamPage from '../teampage/teampage';
-import AboutUs from '../aboutus/aboutus';
 import './mainpage.css';
 
 const MainPage: React.FC = () => {
@@ -35,9 +34,6 @@ const MainPage: React.FC = () => {
       </div>
       <div id="team">
         <TeamPage />
-      </div>
-      <div id="about">
-        <AboutUs />
       </div>
     </div>
   );

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Toggle from '../toggle-button/toggle';
 import LineAnimation from '../animations/lineanimation';
 import './home.css';
+import Schedule from '../asset/schedule.png';
+
 
 const Home: React.FC = () => {
     const [defaultText, setDefaultText] = useState('text 1');
@@ -10,19 +12,17 @@ const Home: React.FC = () => {
     return (
       <div>
         <LineAnimation />
-        <div className="main-page">
+        <div className="main-home-page">
         <div className="title">
-          <h1>GRUPGO CAMPUTHON</h1>
+          <h1>Welcome to GRUPGO!</h1>
           <p>
-            Join in our Project. "Success is not final, failure is not fatal: <br/>
-            It is the courage to continue that counts." - Winston Churchill :)
+          Discover the extraordinary free time management system offered by GRUPGO. With our innovative features and user-friendly interface, managing your schedule has never been easier. 
           </p>
           <div className="toggle-container">
-            <Toggle defaultText={'왼쪽버튼 1'} hoverText={'왼쪽버튼 2'} />
-            <Toggle defaultText={'오른쪽 버튼1'} hoverText={'경록형'} />
+            <Toggle defaultText={'Discord channel'} hoverText={'Join In Discord !'} href='https://discord.gg/hdc6fndc'/>
           </div>
-          <div className='image'>
-            
+          <div className='imagee'>
+            <img src = {Schedule}/>
           </div>
         </div>
       </div>

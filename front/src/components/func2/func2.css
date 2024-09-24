@@ -12,6 +12,72 @@
   z-index: 0;
 }
 
+.line-graph-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  padding: 10px;
+  
+  background-color: #4c4994;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 3;
+}
+
+.pie-chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3c3a74;
+  width: 20%;
+  height: 80%;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  z-index: 3;
+}
+
+.bottom-div {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin: 20px;
+}
+
+.bottom-div-div {
+  width: 60%;
+  background-color: #3c3a74;
+  height: 50%;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  color: #fff;
+  display: flex;
+  flex-direction: column; /* 추가된 부분 */
+  align-items: center; 
+  justify-content: center; 
+  text-align: center; 
+}
+
+.navigate-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.navigate-button:hover {
+  background-color: #45a049;
+}
+
 #func2-page h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
@@ -25,7 +91,7 @@
 .wave {
   overflow: hidden;
   position: absolute;
-  right:20%;
+  right: 20%;
   width: 200vw;
   height: 200vw;
   border-radius: 40%;

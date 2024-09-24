@@ -1,0 +1,50 @@
+   .payment-complete-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #645796;
+    color:white;
+    width:100%;
+  }
+  
+  .payment-complete-page h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .payment-complete-page p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .qr-section {
+    margin-bottom: 20px;
+  }
+  
+  .qr-placeholder {
+    width: 256px;
+    height: 256px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #ccc;
+    margin-bottom: 20px;
+  }
+  
+  .back-to-home-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  
+  .back-to-home-button:hover {
+    background-color: #45a049;
+  }
+  

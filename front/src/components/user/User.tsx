@@ -1,60 +1,45 @@
-import React, { createContext, useEffect, useState, ReactNode } from "react";
-import axios from "axios";
+import { createContext, useState } from "react";
 
-
-// User 타입 정의
+// 사용자 정보
 export interface UserType {
-    userID: string;
-    firstName: string;
-    lastName: string;
-    gender: string;
-    phone: string;
-    email: string;
-    pass: string;
-    avatar?: string;
+    userID: string; // 아이디
+
+    firstName: string; // 성
+    lastName: string; // 이름
+    gender: string; // 성별
+    phone: string; // 전화번호
+    email: string; // 이메일
+    pass: string; // 비번(이건 없애는게 나을 수도?)
+    avatar?: string; // 아바타 이미지 URL (optional)
 }
 
-// UserMain 컨텍스트 생성
-interface UserMainContext {
-    user: UserType | null; // 2개 타입
-    setUser: React.Dispatch<React.SetStateAction<UserType | null>>;
-}
+// 임의로 지정했습니다..
+export const UserData: UserType = {
+    userID: "front-end",
+    firstName: "Ryu",
+    lastName: "KyungRok",
+    gender: "male",
+    phone: "010",
+    email: "test@test.com",
+    pass: "123456",
 
-export const UserMain = createContext<UserMainContext>({
-    user: null,
+    avatar: "", // 초기값
+};
+
+export const UserMain = createContext<{
+    user: UserType;
+    setUser: React.Dispatch<React.SetStateAction<UserType>>;
+}>({
+    user: UserData,
     setUser: () => {},
 });
 
-const Users = () => {
-    const [users, setUsers] = useState<UserType[]>([]);
-    const { setUser } = React.useContext(UserMain); // UserMain 컨텍스트 사용
-
-    useEffect(() => {
-        axios
-            .get("/UserList.json") // 현재 json파일로 지정. 추후 api를 통해서 받아와야 할듯??
-            .then((response) => {
-                setUsers(response.data);
-                // UserMain 컨텍스트의 user 상태 업데이트 (첫 번째 사용자로 설정)
-                if (response.data.length > 0) {
-                    setUser(response.data[0]);
-                }
-            })
-            .catch((error) => console.error("Error fetching data:", error));
-    }, []); // 컴포넌트 로드 시 한 번만 실행
-
-    return null; // 데이터만 받아옴4
-};
-
-// UserProvider를 통해 context를 하위 컴포넌트에 제공
-export const UserProvider = ({ children }: { children: ReactNode }) => {
-    const [user, setUser] = useState<UserType | null>(null);
+export const UserProvider = ({ children }: { children: React.ReactNode }) => {
+    const [user, setUser] = useState<UserType>(UserData);
 
     return (
         <UserMain.Provider value={{ user, setUser }}>
-            <Users />
             {children}
         </UserMain.Provider>
     );
 };
-
-export default Users;

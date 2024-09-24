@@ -1,0 +1,99 @@
+[
+  {
+    "subjectNum": "CSC4028-01",
+    "subjectName": "시큐어코딩",
+    "professor": "이호정",
+    "dayOfWeek": "월",
+    "startTime": "5.0",
+    "endTime": "6.5"
+  },
+
+  {
+    "subjectNum": "CSC4014-01",
+    "subjectName": "형식언어",
+    "professor": "송수환",
+    "dayOfWeek": "월",
+    "startTime": "7.0",
+    "endTime": "8.0"
+  },
+  {
+    "subjectNum": "CSC4009-02",
+    "subjectName": "데이터베이스",
+    "professor": "이강만",
+    "dayOfWeek": "화",
+    "startTime": "2.5",
+    "endTime": "3.5"
+  },
+  {
+    "subjectNum": "PRI4024-02",
+    "subjectName": "공학선형대수학",
+    "professor": "임영빈",
+    "dayOfWeek": "화",
+    "startTime": "4.0",
+    "endTime": "5.0"
+  },
+  {
+    "subjectNum": "CSC4004-03",
+    "subjectName": "공개SW프로젝트",
+    "professor": "장혜령",
+    "dayOfWeek": "화",
+    "startTime": "7.0",
+    "endTime": "8.5"
+  },
+  {
+    "subjectNum": "CSC4001-03",
+    "subjectName": "운영체제",
+    "professor": "이강우",
+    "dayOfWeek": "화",
+    "startTime": "9.0",
+    "endTime": "10.0"
+  },
+  {
+    "subjectNum": "CSC4028-01",
+    "subjectName": "시큐어코딩",
+    "professor": "이호정",
+    "dayOfWeek": "수",
+    "startTime": "5.5",
+    "endTime": "7.0"
+  },
+  {
+    "subjectNum": "CSC4014-01",
+    "subjectName": "형식언어",
+    "professor": "송수환",
+    "dayOfWeek": "수",
+    "startTime": "7.5",
+    "endTime": "8.5"
+  },
+  {
+    "subjectNum": "CSC4009-02",
+    "subjectName": "데이터베이스",
+    "professor": "이강만",
+    "dayOfWeek": "목",
+    "startTime": "2.5",
+    "endTime": "3.5"
+  },
+  {
+    "subjectNum": "PRI4024-02",
+    "subjectName": "공학선형대수학",
+    "professor": "임영빈",
+    "dayOfWeek": "목",
+    "startTime": "4.0",
+    "endTime": "5.0"
+  },
+  {
+    "subjectNum": "CSC4004-03",
+    "subjectName": "공개SW프로젝트",
+    "professor": "장혜령",
+    "dayOfWeek": "목",
+    "startTime": "7.0",
+    "endTime": "8.5"
+  },
+  {
+    "subjectNum": "CSC4001-03",
+    "subjectName": "운영체제",
+    "professor": "이강우",
+    "dayOfWeek": "목",
+    "startTime": "9.0",
+    "endTime": "10.0"
+  }
+]

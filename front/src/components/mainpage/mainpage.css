@@ -1,4 +1,5 @@
 .main-page {
+  width:100%;
   display: flex;
   flex-direction: column;
   overflow-x: hidden; /* 가로 스크롤 비활성화 */
